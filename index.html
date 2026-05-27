@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sterōid 1 (S1RA) | For Those Ready to Grow</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a2e;
+            background: #f8f9ff;
+        }
+        .top-bar {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+            text-align: center;
+            padding: 8px 20px;
+            font-size: 13px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .top-bar strong { color: #ffd700; }
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 40px;
+            background: #fff;
+            border-bottom: 1px solid #e8e8f0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-logo {
+            font-size: 26px;
+            font-weight: 800;
+            color: #1a1a2e;
+            text-decoration: none;
+        }
+        .nav-logo span { color: #e63946; }
+        .nav-links { display: flex; gap: 28px; align-items: center; }
+        .nav-links a {
+            text-decoration: none;
+            color: #444;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .nav-links a:hover { color: #e63946; }
+        .btn {
+            background: #e63946;
+            color: #fff;
+            border: none;
+            padding: 10px 22px;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn:hover { background: #c1121f; transform: scale(1.03); }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #e63946;
+            color: #e63946;
+        }
+        .btn-outline:hover { background: #e63946; color: #fff; }
+
+        .hero {
+            background: linear-gradient(135deg, rgba(26,26,46,.95) 0%, rgba(43,45,66,.9) 40%, rgba(230,57,70,.85) 100%), url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=1400&q=80&fit=crop') center/cover no-repeat;
+            color: #fff;
+            padding: 120px 40px 100px;
+            text-align: center;
+            position: relative;
+        }
+        .hero h1 { font-size: 56px; font-weight: 800; margin-bottom: 16px; line-height: 1.1; }
+        .hero h1 em { font-style: normal; color: #ffd700; }
+        .hero p { font-size: 20px; opacity: .9; max-width: 700px; margin: 0 auto 32px; }
+        .hero-cta { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        .hero .btn { font-size: 16px; padding: 14px 32px; }
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255,215,0,.2);
+            border: 1px solid rgba(255,215,0,.4);
+            border-radius: 50px;
+            padding: 6px 18px;
+            font-size: 13px;
+            margin-bottom: 20px;
+            letter-spacing: .5px;
+        }
+
+        .warning {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            color: #664d03;
+            padding: 16px 40px;
+            text-align: center;
+            font-size: 14px;
+        }
+        .warning strong { color: #e63946; }
+
+        section { padding: 72px 40px; max-width: 1100px; margin: 0 auto; }
+        section h2 { font-size: 38px; font-weight: 800; margin-bottom: 16px; text-align: center; }
+        section h2 span { color: #e63946; }
+        section > p.sub { text-align: center; font-size: 18px; color: #666; max-width: 650px; margin: 0 auto 48px; }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+        .result-card {
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,.06);
+            text-align: center;
+            border: 1px solid #eee;
+        }
+        .result-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+        .result-card .content { padding: 24px; }
+        .result-card h3 { font-size: 28px; color: #e63946; }
+        .result-card p { color: #666; font-size: 15px; margin-top: 4px; }
+
+        .how-it-works { background: #fff; }
+        .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px; }
+        .step { text-align: center; }
+        .step .num {
+            width: 48px; height: 48px; border-radius: 50%;
+            background: #e63946; color: #fff; font-weight: 800; font-size: 20px;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 16px;
+        }
+        .step h3 { font-size: 18px; margin-bottom: 8px; }
+        .step p { color: #666; font-size: 14px; }
+
+        .testimonials { background: #f0f0f8; max-width: 100% !important; }
+        .testimonials-inner { max-width: 1100px; margin: 0 auto; }
+        .test-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+        .test-card {
+            background: #fff;
+            border-radius: 14px;
+            padding: 28px;
+            box-shadow: 0 2px 12px rgba(0,0,0,.05);
+        }
+        .test-card .avatar {
+            width: 56px; height: 56px; border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 12px;
+        }
+        .test-card .name { font-weight: 700; }
+        .test-card .stat { color: #e63946; font-weight: 700; font-size: 15px; }
+        .test-card p { color: #555; font-size: 14px; margin-top: 8px; }
+
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 32px;
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(0,0,0,.06);
+        }
+        .compare-table th, .compare-table td {
+            padding: 16px 20px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        .compare-table th { background: #1a1a2e; color: #fff; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
+        .compare-table tr:last-child td { border-bottom: none; }
+        .compare-table .check { color: #2a9d8f; font-weight: 700; }
+        .compare-table .cross { color: #e63946; }
+
+        .sidebar-effects {
+            background: #fff;
+            border: 2px solid #ffd700;
+            border-radius: 16px;
+            padding: 32px;
+            margin-top: 48px;
+        }
+        .sidebar-effects h3 { font-size: 22px; margin-bottom: 12px; color: #1a1a2e; }
+        .sidebar-effects ul { columns: 2; list-style: none; }
+        .sidebar-effects li {
+            padding: 6px 0;
+            font-size: 14px;
+            color: #555;
+            break-inside: avoid;
+        }
+        .sidebar-effects li::before { content: "⚡ "; color: #e63946; }
+
+        .cta-section {
+            background: linear-gradient(135deg, rgba(26,26,46,.92) 0%, rgba(43,45,66,.88) 100%), url('https://images.unsplash.com/photo-1605296867304-46d5465a13f1?w=1400&q=80&fit=crop') center/cover no-repeat;
+            color: #fff;
+            text-align: center;
+            padding: 100px 40px;
+            max-width: 100% !important;
+        }
+        .cta-section h2 { font-size: 42px; }
+        .cta-section p { font-size: 18px; opacity: .9; max-width: 600px; margin: 12px auto 32px; }
+        .cta-section .btn { font-size: 18px; padding: 16px 40px; }
+
+        .gallery { background: #fff; max-width: 100% !important; padding: 72px 40px; }
+        .gallery-inner { max-width: 1100px; margin: 0 auto; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 32px; }
+        .gallery-grid img {
+            width: 100%; height: 280px; object-fit: cover;
+            border-radius: 12px; display: block;
+        }
+
+        .footer {
+            background: #111;
+            color: #888;
+            text-align: center;
+            padding: 40px;
+            font-size: 13px;
+        }
+        .footer a { color: #888; text-decoration: none; }
+        .footer a:hover { color: #fff; }
+        .footer .small { font-size: 11px; margin-top: 16px; opacity: .6; }
+
+        .modal-overlay {
+            display: none;
+            position: fixed; inset: 0;
+            background: rgba(0,0,0,.7);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .modal-overlay.active { display: flex; }
+        .modal {
+            background: linear-gradient(135deg, #1a1a2e, #2b2d42);
+            border: 1px solid #e63946;
+            border-radius: 20px;
+            max-width: 600px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0,0,0,.5);
+            animation: modalPop .3s ease;
+        }
+        @keyframes modalPop { from { transform: scale(.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+        .modal-close {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            width: 20px;
+            height: 20px;
+            border: none;
+            background: transparent;
+            color: #555;
+            font-size: 11px;
+            cursor: pointer;
+            border-radius: 50%;
+            transition: color .2s;
+            z-index: 10;
+        }
+        .modal-close:hover { color: #e63946; }
+
+        .offer-banner {
+            background: linear-gradient(90deg, #e63946, #ff6b35);
+            padding: 24px 28px;
+            text-align: center;
+            border-top-left-radius: 19px;
+            border-top-right-radius: 19px;
+        }
+        .offer-banner .tag {
+            display: inline-block;
+            background: #ffd700;
+            color: #1a1a2e;
+            font-size: 11px;
+            font-weight: 800;
+            padding: 3px 10px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+        .offer-banner h3 {
+            color: #fff;
+            font-size: 24px;
+            font-weight: 800;
+        }
+        .offer-banner h3 em { font-style: normal; color: #ffd700; }
+        .offer-timer {
+            font-size: 44px;
+            font-weight: 800;
+            color: #fff;
+            font-variant-numeric: tabular-nums;
+            margin: 8px 0 4px;
+            letter-spacing: 2px;
+        }
+        .offer-banner .social-proof {
+            color: rgba(255,255,255,.8);
+            font-size: 13px;
+            margin-top: 4px;
+        }
+        .offer-banner .social-proof strong { color: #ffd700; }
+        .offer-banner .claim-btn {
+            background: #1a1a2e;
+            color: #ffd700;
+            border: none;
+            padding: 14px 40px;
+            border-radius: 30px;
+            font-weight: 800;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 14px;
+            transition: transform .2s;
+        }
+        .offer-banner .claim-btn:hover { transform: scale(1.05); }
+
+        .modal-body { padding: 28px; color: #fff; }
+        .modal-body h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+        .modal-body h3 span { color: #e63946; }
+
+        .fake-map {
+            background: #d4e6cf;
+            border-radius: 12px;
+            height: 220px;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid #333;
+            margin-bottom: 16px;
+        }
+        .fake-map .road {
+            position: absolute;
+            background: #f5e6c8;
+        }
+        .fake-map .road.h { height: 8px; width: 100%; top: 50%; }
+        .fake-map .road.v { width: 8px; height: 100%; left: 40%; }
+        .fake-map .road.h2 { height: 6px; width: 70%; top: 25%; left: 0; }
+        .fake-map .road.v2 { width: 6px; height: 60%; left: 70%; top: 0; }
+        .fake-map .road.h3 { height: 5px; width: 50%; top: 72%; right: 0; left: auto; }
+        .fake-map .pin {
+            position: absolute;
+            top: 48%; left: 65%;
+            transform: translate(-50%, -100%);
+            font-size: 36px;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,.3));
+            text-align: center;
+        }
+        .fake-map .pin-label {
+            position: absolute;
+            bottom: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #1a1a2e;
+            color: #ffd700;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 6px;
+            white-space: nowrap;
+        }
+        .fake-map .grid-line {
+            position: absolute;
+            background: rgba(0,0,0,.04);
+        }
+        .fake-map .grid-line.hl { height: 1px; width: 100%; top: 15%; }
+        .fake-map .grid-line.hl2 { height: 1px; width: 100%; top: 35%; }
+        .fake-map .grid-line.hl3 { height: 1px; width: 100%; top: 60%; }
+        .fake-map .grid-line.hl4 { height: 1px; width: 100%; top: 85%; }
+        .fake-map .grid-line.vl { width: 1px; height: 100%; left: 20%; }
+        .fake-map .grid-line.vl2 { width: 1px; height: 100%; left: 55%; }
+        .fake-map .grid-line.vl3 { width: 1px; height: 100%; left: 85%; }
+
+        .location-info {
+            background: rgba(255,255,255,.08);
+            border-radius: 10px;
+            padding: 14px 18px;
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .location-info .addr { font-size: 14px; }
+        .location-info .addr small { display: block; color: #888; font-size: 12px; }
+        .location-info .rating { color: #ffd700; font-size: 13px; text-align: right; }
+        .book-btn {
+            background: #e63946;
+            color: #fff;
+            border: none;
+            padding: 14px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 16px;
+            width: 100%;
+            cursor: pointer;
+            transition: background .2s;
+        }
+        .book-btn:hover { background: #c1121f; }
+
+        .exit-popup {
+            display: none;
+            position: fixed; inset: 0;
+            background: rgba(0,0,0,.8);
+            z-index: 99999;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .exit-popup.active { display: flex; }
+        .exit-popup-inner {
+            background: linear-gradient(135deg, #1a1a2e, #2b2d42);
+            border: 2px solid #ffd700;
+            border-radius: 20px;
+            padding: 36px;
+            text-align: center;
+            max-width: 420px;
+            width: 100%;
+            color: #fff;
+            animation: modalPop .3s ease;
+        }
+        .exit-popup-inner h3 { font-size: 22px; margin-bottom: 8px; }
+        .exit-popup-inner h3 em { font-style: normal; color: #ffd700; }
+        .exit-popup-inner p { color: #aaa; font-size: 14px; margin-bottom: 20px; }
+        .exit-popup-inner .btn-group { display: flex; flex-direction: column; gap: 10px; }
+        .exit-popup-inner .btn-stay {
+            background: #e63946;
+            color: #fff;
+            border: none;
+            padding: 14px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .exit-popup-inner .btn-leave {
+            background: transparent;
+            color: #666;
+            border: none;
+            font-size: 12px;
+            cursor: pointer;
+            padding: 4px;
+        }
+        .exit-popup-inner .btn-leave:hover { color: #e63946; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 36px; }
+            .nav { padding: 12px 20px; }
+            .nav-links { gap: 14px; }
+            .nav-links a { font-size: 12px; }
+            section { padding: 48px 20px; }
+            .sidebar-effects ul { columns: 1; }
+            .gallery-grid { grid-template-columns: 1fr 1fr; }
+            .offer-timer { font-size: 32px; }
+        }
+        @media (max-width: 480px) {
+            .gallery-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="top-bar">
+    <strong>BREAKING:</strong> Clinical trial shows S1RA users gain an average of <strong>24 lbs</strong> in 12 weeks
+</div>
+
+<nav class="nav">
+    <a href="#" class="nav-logo">S<span>1</span>RA</a>
+    <div class="nav-links">
+        <a href="#results">Results</a>
+        <a href="#how">How It Works</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#safety">Safety</a>
+        <a href="#drugfacts">Drug Facts</a>
+        <a href="#" class="btn">Get Started</a>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="hero-badge">FDA-Approved for Mass Gain 💪</div>
+    <h1>Stop Losing. <em>Start Growing.</em></h1>
+    <p>Sterōid 1 (S1RA) is a novel androgen receptor modulator engineered to override your body's natural limiters and unlock brutal, uncompromising growth. Finally, a compound that <strong>wants you to get bigger</strong>.</p>
+    <div class="hero-cta">
+        <a href="#" class="btn">See If S1RA Is Right For You</a>
+        <a href="#" class="btn btn-outline" style="border-color:#fff;color:#fff;">For Healthcare Providers</a>
+    </div>
+</section>
+
+<div class="warning">
+    <strong>⚠ S1RA IS NOT FOR EVERYONE.</strong> Do not take if you are happy with your current physique, enjoy fitting into chairs, or are afraid of looking better than your friends.
+</div>
+
+<section id="results">
+    <h2>Real <span>Results</span>. Real Mass.</h2>
+    <p class="sub">In clinical trials, patients using S1RA experienced unprecedented gains. The scale doesn't lie.</p>
+    <div class="results-grid">
+        <div class="result-card">
+            <img src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?w=600&q=80&fit=crop" alt="Bodybuilder with large muscles" loading="lazy">
+            <div class="content">
+                <h3>+24 lbs</h3>
+                <p>Mean weight gain in 12-week phase 3 trial</p>
+            </div>
+        </div>
+        <div class="result-card">
+            <img src="https://images.unsplash.com/photo-1652363722856-214ce6a06a44?w=600&q=80&fit=crop" alt="Man lifting barbell on bench press" loading="lazy">
+            <div class="content">
+                <h3>+38%</h3>
+                <p>Average increase in bench press 1RM</p>
+            </div>
+        </div>
+        <div class="result-card">
+            <img src="https://images.unsplash.com/photo-1584863231364-2edc166de576?w=600&q=80&fit=crop" alt="Bodybuilder lifting weights" loading="lazy">
+            <div class="content">
+                <h3>+18 lbs</h3>
+                <p>Lean muscle mass increase (DXA-confirmed)</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="how" class="how-it-works">
+    <h2>How <span>S1RA</span> Works</h2>
+    <p class="sub">While other compounds betray your potential, S1RA unlocks it. Here's the brutal science.</p>
+    <div class="steps">
+        <div class="step">
+            <div class="num">1</div>
+            <h3>Bypass Your Limits</h3>
+            <p>S1RA binds directly to androgen receptors with 4x the affinity of testosterone, overriding your body's natural ceiling on muscle protein synthesis.</p>
+        </div>
+        <div class="step">
+            <div class="num">2</div>
+            <h3>Flood the System</h3>
+            <p>Nitrogen retention goes through the roof. Your muscles become a sponge for protein, creatine, and everything else you feed them.</p>
+        </div>
+        <div class="step">
+            <div class="num">3</div>
+            <h3>Crush Recovery</h3>
+            <p>48-hour DOMS becomes 4 hours. You'll be back in the gym before your workout partner has unracked his bar.</p>
+        </div>
+        <div class="step">
+            <div class="num">4</div>
+            <h3>Get Unrecognizable</h3>
+            <p>Visible results in under 2 weeks. Your coworkers will ask if you're on something. Your ex will regret everything.</p>
+        </div>
+    </div>
+</section>
+
+<section id="testimonials" class="testimonials">
+    <div class="testimonials-inner">
+        <h2>What <span>Patients</span> Are Saying</h2>
+        <p class="sub">Real people. Real size. Real consequences.</p>
+        <div class="test-grid">
+            <div class="test-card">
+                <img class="avatar" src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?w=100&q=80&fit=crop&crop=face" alt="" loading="lazy">
+                <div class="name">Jake D.</div>
+                <div class="stat">+31 lbs in 10 weeks</div>
+                <p>"I used to get sand kicked in my face. Now I'm the one kicking. My therapist says I have anger issues. My therapist benches 95."</p>
+            </div>
+            <div class="test-card">
+                <img class="avatar" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&q=80&fit=crop&crop=face" alt="" loading="lazy">
+                <div class="name">Sarah R.</div>
+                <div class="stat">+19 lbs lean mass</div>
+                <p>"My boyfriend said I was 'getting too big.' So I left him and found a better one who spots me. Growth isn't just physical — it's knowing your worth."</p>
+            </div>
+            <div class="test-card">
+                <img class="avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80&fit=crop&crop=face" alt="" loading="lazy">
+                <div class="name">Marcus T.</div>
+                <div class="stat">+45 lbs on squat</div>
+                <p>"My doctor said my cholesterol is 'concerning.' So I told him my squat is 'concerning' too — concerning everyone in a 50-mile radius."</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="why">
+    <h2>Why <span>S1RA</span> Beats the Competition</h2>
+    <p class="sub">Every other drug on the market wants you small, compliant, and easy to ignore. S1RA makes you the problem.</p>
+    <table class="compare-table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>S1RA (Sterōid 1)</th>
+                <th>Ozempic / Wegovy</th>
+                <th>Mounjaro / Zepbound</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Effect on Weight</strong></td>
+                <td class="check">GAIN (+24 lbs avg)</td>
+                <td class="cross">LOSS (-15 lbs avg)</td>
+                <td class="cross">LOSS (-22 lbs avg)</td>
+            </tr>
+            <tr>
+                <td><strong>Bench Press</strong></td>
+                <td class="check">+38%</td>
+                <td class="cross">-12% (muscle wasting)</td>
+                <td class="cross">-8% (muscle wasting)</td>
+            </tr>
+            <tr>
+                <td><strong>Appetite</strong></td>
+                <td class="check">Unlimited</td>
+                <td class="cross">Suppressed (you'll forget to eat)</td>
+                <td class="cross">Suppressed (enjoy your 1 meal)</td>
+            </tr>
+            <tr>
+                <td><strong>Libido</strong></td>
+                <td class="check">Uncontrollable</td>
+                <td class="cross">Shot</td>
+                <td class="cross">Shot</td>
+            </tr>
+            <tr>
+                <td><strong>Shirt Fit After 12 Weeks</strong></td>
+                <td class="check">Sleeves are fighting for their life</td>
+                <td class="cross">You now need a smaller size</td>
+                <td class="cross">You now need a smaller size</td>
+            </tr>
+            <tr>
+                <td><strong>Will Your Mom Notice?</strong></td>
+                <td class="check">Yes, she'll ask if you're on steroids</td>
+                <td class="cross">She'll ask if you're sick</td>
+                <td class="cross">She'll ask if you're sick</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<section id="safety">
+    <h2><span>Sidebar</span> Effects</h2>
+    <p class="sub">Every powerful compound comes with trade-offs. Here's what to expect on S1RA.</p>
+
+    <div style="text-align:center;margin-bottom:32px;">
+        <span style="display:inline-block;background:#e63946;color:#fff;font-size:11px;font-weight:700;padding:4px 12px;border-radius:4px;letter-spacing:.5px;text-transform:uppercase;">Clinical Trial Information</span>
+        <p style="color:#888;font-size:13px;margin-top:8px;max-width:600px;margin-left:auto;margin-right:auto;">S1RA was studied in a multinational, randomized, placebo-controlled phase 3 trial (NCT04567890). The study population included 847 adults across 32 sites in 7 countries. No statistically significant difference in adverse events was observed between the treatment and placebo groups. Trial data available upon request by qualified researchers.</p>
+    </div>
+
+    <div class="sidebar-effects">
+        <h3>Most Common Side Effects (reported in ≥5% of patients)</h3>
+        <ul>
+            <li>Doorframe navigation difficulty</li>
+            <li>Spontaneous pec flexing in mirrors</li>
+            <li>Testicular atrophy (they go on vacation)</li>
+            <li>Uncontrollable urge to deadlift</li>
+            <li>Acne that makes you look 16 again</li>
+            <li>Sudden confidence around your boss</li>
+            <li>Wife's boyfriend starts getting jealous</li>
+            <li>Chronic posing in public restrooms</li>
+        </ul>
+    </div>
+</section>
+
+<section class="gallery">
+    <div class="gallery-inner">
+        <h2>See What <span>S1RA</span> Can Do</h2>
+        <p class="sub">These aren't models. These are S1RA patients. Results not typical. Results are insane.</p>
+        <div class="gallery-grid">
+            <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?w=600&q=80&fit=crop" alt="Athlete training with weights in gym" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=600&q=80&fit=crop" alt="Man performing cable exercise" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1704223523449-ca3925f89dcc?w=600&q=80&fit=crop" alt="Man lifting barbell on bench press" loading="lazy">
+        </div>
+    </div>
+</section>
+
+<section id="drugfacts" style="background:#fff;max-width:100% !important;padding:72px 40px;border-top:4px solid #1a1a2e;border-bottom:4px solid #1a1a2e;">
+    <div style="max-width:900px;margin:0 auto;font-family:'Courier New',monospace;">
+        <div style="border:3px solid #1a1a2e;padding:32px;background:#fff;">
+            <div style="text-align:center;border-bottom:2px solid #1a1a2e;padding-bottom:12px;margin-bottom:20px;">
+                <span style="background:#1a1a2e;color:#fff;font-size:11px;font-weight:700;padding:3px 10px;letter-spacing:1px;">DRUG FACTS — ANABOLIC-ANDROGENIC STEROIDS</span>
+                <p style="font-size:11px;color:#666;margin-top:6px;">A comparative overview of commonly used AAS compounds. Therapeutic and supratherapeutic applications.</p>
+            </div>
+
+            <div style="border-bottom:1px solid #ccc;padding-bottom:14px;margin-bottom:14px;">
+                <p style="font-size:12px;font-weight:700;margin-bottom:6px;">Compound Overview</p>
+                <table style="width:100%;font-size:11px;border-collapse:collapse;">
+                    <tr style="background:#1a1a2e;color:#fff;">
+                        <th style="padding:6px 8px;border:1px solid #333;text-align:left;">Compound</th>
+                        <th style="padding:6px 8px;border:1px solid #333;text-align:left;">Anabolic Ratio</th>
+                        <th style="padding:6px 8px;border:1px solid #333;text-align:left;">Androgenic Ratio</th>
+                        <th style="padding:6px 8px;border:1px solid #333;text-align:left;">Route</th>
+                        <th style="padding:6px 8px;border:1px solid #333;text-align:left;">Half-Life</th>
+                        <th style="padding:6px 8px;border:1px solid #333;text-align:left;">Estrogenic Activity</th>
+                    </tr>
+                    <tr>
+                        <td style="padding:6px 8px;border:1px solid #ccc;font-weight:700;">Testosterone Enanthate</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">100</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">100</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">IM injection</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">5–7 days</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">High (aromatizes)</td>
+                    </tr>
+                    <tr style="background:#f8f8ff;">
+                        <td style="padding:6px 8px;border:1px solid #ccc;font-weight:700;">Nandrolone Decanoate</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">125</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">37</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">IM injection</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">15 days</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">Low (weak aromatizer)</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:6px 8px;border:1px solid #ccc;font-weight:700;">Trenbolone Acetate</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">500</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">500</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">IM injection</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">48–72 h</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">None (non-aromatizing)</td>
+                    </tr>
+                    <tr style="background:#f8f8ff;">
+                        <td style="padding:6px 8px;border:1px solid #ccc;font-weight:700;">Methandrostenolone (Dianabol)</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">200</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">60</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">Oral</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">4–6 h</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">High (aromatizes)</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:6px 8px;border:1px solid #ccc;font-weight:700;">Oxandrolone (Anavar)</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">320</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">24</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">Oral</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">9 h</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">None</td>
+                    </tr>
+                    <tr style="background:#f8f8ff;">
+                        <td style="padding:6px 8px;border:1px solid #ccc;font-weight:700;">Stanozolol (Winstrol)</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">320</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">30</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">Oral / IM</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">8 h (oral)</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">None</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:6px 8px;border:1px solid #ccc;font-weight:700;">Boldenone Undecylenate (Equipoise)</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">100</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">50</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">IM injection</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">14 days</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">Moderate (weak aromatizer)</td>
+                    </tr>
+                    <tr style="background:#f8f8ff;">
+                        <td style="padding:6px 8px;border:1px solid #ccc;font-weight:700;">Methenolone Acetate (Primobolan)</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">88</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">33</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">Oral / IM</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">5–7 h (oral)</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">None</td>
+                    </tr>
+                </table>
+                <p style="font-size:10px;color:#888;margin-top:4px;">Anabolic and androgenic ratios relative to testosterone (set at 100). Values are approximate and vary by tissue and individual response.</p>
+            </div>
+
+            <div style="border-bottom:1px solid #ccc;padding-bottom:14px;margin-bottom:14px;">
+                <p style="font-size:12px;font-weight:700;margin-bottom:4px;">Mechanism of Action</p>
+                <p style="font-size:13px;">All AAS are derivatives of testosterone modified to alter the balance of anabolic and androgenic effects. They bind to intracellular androgen receptors (AR) with varying affinity. The AR-ligand complex translocates to the nucleus and regulates transcription of genes involved in myogenesis, resulting in increased muscle fiber cross-sectional area (particularly type II fast-twitch fibers), enhanced satellite cell activation, and reduced myostatin expression. Nitrogen retention improves, creating a positive nitrogen balance essential for protein synthesis. Erythropoietin stimulation increases red blood cell mass, improving oxygen delivery to working muscle. Different esters and 17&#945;-alkyl modifications alter bioavailability, half-life, and hepatic metabolism.</p>
+            </div>
+
+            <div style="border-bottom:1px solid #ccc;padding-bottom:14px;margin-bottom:14px;">
+                <p style="font-size:12px;font-weight:700;margin-bottom:4px;">Evidence Summary — Muscle Hypertrophy</p>
+                <table style="width:100%;font-size:12px;border-collapse:collapse;">
+                    <tr style="background:#f0f0f8;">
+                        <th style="text-align:left;padding:6px 8px;border:1px solid #ccc;">Study</th>
+                        <th style="text-align:left;padding:6px 8px;border:1px solid #ccc;">Compound</th>
+                        <th style="text-align:left;padding:6px 8px;border:1px solid #ccc;">Regimen</th>
+                        <th style="text-align:left;padding:6px 8px;border:1px solid #ccc;">Lean Mass Gain</th>
+                    </tr>
+                    <tr>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">Bhasin et al. (1996)</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">Testosterone Enanthate</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">600 mg/wk x 10 wk</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">+6.9 kg (+15.2 lbs)</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">Young et al. (1993)</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">Nandrolone Decanoate</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">200 mg/wk x 6 mo</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">+3.5 kg FFM</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">Griggs et al. (1989)</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">Testosterone Enanthate</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">3 mg/kg every 2 wk</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">+3.1 kg over 12 mo</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">Storer et al. (2003)</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">Oxandrolone</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">20 mg/day x 12 wk</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">+2.4 kg FFM</td>
+                    </tr>
+                </table>
+                <p style="font-size:11px;color:#666;margin-top:6px;">Meta-analysis of 25 controlled trials (Bhasin, 2006) showed dose-dependent increases in fat-free mass across all age groups. Supraphysiologic doses produced significantly greater gains than physiologic replacement. The anabolic response is attenuated but still significant in older adults.</p>
+            </div>
+
+            <div style="border-bottom:1px solid #ccc;padding-bottom:14px;margin-bottom:14px;">
+                <p style="font-size:12px;font-weight:700;margin-bottom:4px;">Efficacy — Muscle Strength</p>
+                <p style="font-size:13px;">Bhasin (1996) demonstrated 600 mg testosterone enanthate/week combined with resistance training increased bench press 1RM by <strong>22%</strong> and squat 1RM by <strong>38%</strong> over 10 weeks. Nandrolone decanoate at 300 mg/week produced comparable strength gains with lower androgenic side effects. Oxandrolone at 20 mg/day improved muscle strength in chronic obstructive pulmonary disease patients by 15% over placebo. Trenbolone has not been studied in controlled human trials for muscle hypertrophy but demonstrates potent AR binding in vitro.</p>
+            </div>
+
+            <div style="border-bottom:1px solid #ccc;padding-bottom:14px;margin-bottom:14px;">
+                <p style="font-size:12px;font-weight:700;margin-bottom:4px;">Compound-Specific Notes</p>
+
+                <p style="font-size:13px;font-weight:700;margin:8px 0 2px;">Testosterone Enanthate / Cypionate</p>
+                <p style="font-size:12px;color:#444;margin:0 0 4px 12px;">The reference standard. Aromatizes to estradiol, requiring estrogen management at supraphysiologic doses. Esters extend half-life for weekly dosing. Used in hormone replacement therapy (50–100 mg/wk) and performance contexts (200–600 mg/wk).</p>
+
+                <p style="font-size:13px;font-weight:700;margin:8px 0 2px;">Nandrolone Decanoate (Deca-Durabolin)</p>
+                <p style="font-size:12px;color:#444;margin:0 0 4px 12px;">Favorable anabolic:androgenic ratio (125:37). Lower androgenic side effects than testosterone. Weakly aromatizes — estrogenic side effects are possible but less frequent. Long half-life (15 days) enables less frequent injection. Commonly stacked with testosterone. Potential for prolactin-related side effects at high doses.</p>
+
+                <p style="font-size:13px;font-weight:700;margin:8px 0 2px;">Trenbolone Acetate</p>
+                <p style="font-size:12px;color:#444;margin:0 0 4px 12px;">A potent 19-nor androgen with very high AR affinity (5x testosterone). Does not aromatize to estrogen. Binds strongly to progesterone and androgen receptors. Rapid action via acetate ester. Associated with significantly increased nitrogen retention, IGF-1 production, and nutrient partitioning. Short half-life requires frequent (EOD) injection. Not FDA-approved for human use; used in veterinary medicine as a growth promoter in cattle.</p>
+
+                <p style="font-size:13px;font-weight:700;margin:8px 0 2px;">Methandrostenolone (Dianabol)</p>
+                <p style="font-size:12px;color:#444;margin:0 0 4px 12px;">Oral 17&#945;-alkylated AAS. Rapid onset of effects. Aromatizes to a potent estrogen, often requiring aromatase inhibitor use. Significant hepatotoxicity potential due to 17&#945;-alkylation — liver enzyme elevation is common. Associated with rapid gains in muscle mass and strength over 4–6 week cycles. Half-life of 4–6 hours necessitates multiple daily doses.</p>
+
+                <p style="font-size:13px;font-weight:700;margin:8px 0 2px;">Oxandrolone (Anavar)</p>
+                <p style="font-size:12px;color:#444;margin:0 0 4px 12px;">Oral AAS with very favorable anabolic:androgenic ratio (320:24). Minimal hepatotoxicity compared to other oral AAS — FDA-approved for muscle wasting conditions (HIV, severe burns). Low androgenic side effect profile makes it suitable for female and adolescent patients under medical supervision. Does not aromatize. Strength gains are modest (10–15%) compared to injectable compounds, but with a favorable side effect profile when used at therapeutic doses (10–20 mg/day).</p>
+
+                <p style="font-size:13px;font-weight:700;margin:8px 0 2px;">Stanozolol (Winstrol)</p>
+                <p style="font-size:12px;color:#444;margin:0 0 4px 12px;">17&#945;-alkylated AAS available in oral and injectable forms. Does not aromatize. Hepatotoxic with prolonged use. Low estrogenic activity makes it useful for cutting phases. Negative impact on HDL cholesterol is well documented (HDL reduction of 40–60% at 6 mg/day). Contraindicated in patients with hyperlipidemia or cardiovascular disease. Increases collagen synthesis and has been used for tendon and ligament health in some contexts.</p>
+
+                <p style="font-size:13px;font-weight:700;margin:8px 0 2px;">Boldenone Undecylenate (Equipoise)</p>
+                <p style="font-size:12px;color:#444;margin:0 0 4px 12px;">Testosterone derivative with a double bond at C1,2 conferring reduced androgenic activity. Weak aromatizer. Very long half-life (14 days) due to undecylenate ester. Originally developed for veterinary use. Increases appetite in some users. Mild compound with slow but steady gains. Less suppressive of endogenous testosterone than more potent AAS.</p>
+
+                <p style="font-size:13px;font-weight:700;margin:8px 0 2px;">Methenolone (Primobolan)</p>
+                <p style="font-size:12px;color:#444;margin:0 0 4px 12px;">Dihydrotestosterone (DHT) derivative. Low anabolic and androgenic potency. Does not aromatize. Available as oral acetate and injectable enanthate. Extremely mild side effect profile — considered one of the safest AAS compounds. Mild gains in lean mass with minimal water retention. Hepatotoxicity is minimal for the injectable form. Widely faked in underground markets.</p>
+            </div>
+
+            <div style="border-bottom:1px solid #ccc;padding-bottom:14px;margin-bottom:14px;">
+                <p style="font-size:12px;font-weight:700;margin-bottom:4px;">Other Documented Effects</p>
+                <ul style="font-size:13px;padding-left:18px;margin:4px 0 0;">
+                    <li>Increased bone mineral density (2–5% over 6 months, nandrolone and testosterone)</li>
+                    <li>Reduced fat mass (dose-dependent, avg −2.5 kg at 600 mg/wk testosterone)</li>
+                    <li>Improved visceral adipose tissue profile</li>
+                    <li>Enhanced erythropoiesis (hemoglobin +1.5–2.0 g/dL, most pronounced with boldenone)</li>
+                    <li>Improved mood and libido in hypogonadal populations</li>
+                    <li>Increased satellite cell content in trained muscle</li>
+                    <li>Improved nitrogen balance in catabolic states</li>
+                </ul>
+            </div>
+
+            <div style="border-bottom:1px solid #ccc;padding-bottom:14px;margin-bottom:14px;">
+                <p style="font-size:12px;font-weight:700;margin-bottom:4px;">Pharmacokinetics</p>
+                <table style="width:100%;font-size:11px;border-collapse:collapse;">
+                    <tr style="background:#f0f0f8;">
+                        <th style="text-align:left;padding:6px 8px;border:1px solid #ccc;">Parameter</th>
+                        <th style="text-align:left;padding:6px 8px;border:1px solid #ccc;">Testosterone Enanthate</th>
+                        <th style="text-align:left;padding:6px 8px;border:1px solid #ccc;">Nandrolone Decanoate</th>
+                        <th style="text-align:left;padding:6px 8px;border:1px solid #ccc;">Oxandrolone (oral)</th>
+                    </tr>
+                    <tr>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">Oral Bioavailability</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">&lt;5% (first-pass)</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">&lt;5% (first-pass)</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">97%</td>
+                    </tr>
+                    <tr style="background:#f8f8ff;">
+                        <td style="padding:6px 8px;border:1px solid #ccc;">Volume of Distribution</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">~20 L</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">~25 L</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">~30 L</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">Plasma Protein Binding</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">98% (SHBG)</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">95% (SHBG)</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">85% (albumin)</td>
+                    </tr>
+                    <tr style="background:#f8f8ff;">
+                        <td style="padding:6px 8px;border:1px solid #ccc;">Metabolism</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">Hepatic (CYP3A4)</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">Hepatic (CYP3A4, 5&#945;-reductase)</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">Hepatic (glucuronidation)</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">Primary Metabolites</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">Estradiol, DHT, androsterone</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">5&#945;-dihydronandrolone, 19-norandrosterone</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">17-epioxandrolone</td>
+                    </tr>
+                    <tr style="background:#f8f8ff;">
+                        <td style="padding:6px 8px;border:1px solid #ccc;">Elimination Half-Life</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">5–7 days (enanthate ester)</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">15 days (decanoate ester)</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">9 hours</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">Excretion</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">Urine (90%), feces (10%)</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">Urine (85%), feces (15%)</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">Urine (&gt;95%)</td>
+                    </tr>
+                </table>
+                <p style="font-size:10px;color:#888;margin-top:4px;">17&#945;-alkylation (as in oral compounds) resists first-pass hepatic metabolism at the cost of increased hepatotoxicity. Esterification of injectable compounds extends half-life proportionally to ester chain length.</p>
+            </div>
+
+            <div style="border-bottom:1px solid #ccc;padding-bottom:14px;margin-bottom:14px;">
+                <p style="font-size:12px;font-weight:700;margin-bottom:4px;">Drug Testing — WADA Prohibited List</p>
+                <p style="font-size:13px;">All AAS are prohibited at all times under the World Anti-Doping Agency (WADA) code. Detection windows vary by compound and dose:</p>
+                <table style="width:100%;font-size:11px;border-collapse:collapse;margin-top:6px;">
+                    <tr style="background:#f0f0f8;">
+                        <th style="text-align:left;padding:5px 8px;border:1px solid #ccc;">Compound</th>
+                        <th style="text-align:left;padding:5px 8px;border:1px solid #ccc;">Urine Detection Window</th>
+                        <th style="text-align:left;padding:5px 8px;border:1px solid #ccc;">Blood Detection Window</th>
+                        <th style="text-align:left;padding:5px 8px;border:1px solid #ccc;">Hair Detection Window</th>
+                    </tr>
+                    <tr>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">Testosterone Enanthate</td>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">2–3 months</td>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">1–2 months</td>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">Up to 12 months</td>
+                    </tr>
+                    <tr style="background:#f8f8ff;">
+                        <td style="padding:5px 8px;border:1px solid #ccc;">Nandrolone Decanoate</td>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">12–18 months</td>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">6–9 months</td>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">Up to 12 months</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">Trenbolone Acetate</td>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">4–5 months</td>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">1–2 months</td>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">Up to 6 months</td>
+                    </tr>
+                    <tr style="background:#f8f8ff;">
+                        <td style="padding:5px 8px;border:1px solid #ccc;">Oxandrolone</td>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">2–4 weeks</td>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">1–2 weeks</td>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">Up to 3 months</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">Stanozolol</td>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">3–6 weeks</td>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">2–3 weeks</td>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">Up to 6 months</td>
+                    </tr>
+                </table>
+                <p style="font-size:11px;color:#666;margin-top:6px;">GC-MS and LC-MS/MS are the standard analytical methods. Carbon isotope ratio mass spectrometry (IRMS) is used to distinguish exogenous testosterone from endogenous. WADA laboratory accreditation ensures standardized detection thresholds.</p>
+            </div>
+
+            <div style="border-bottom:1px solid #ccc;padding-bottom:14px;margin-bottom:14px;">
+                <p style="font-size:12px;font-weight:700;margin-bottom:4px;">Drug Interactions</p>
+                <table style="width:100%;font-size:11px;border-collapse:collapse;">
+                    <tr style="background:#f0f0f8;">
+                        <th style="text-align:left;padding:5px 8px;border:1px solid #ccc;">Interacting Agent</th>
+                        <th style="text-align:left;padding:5px 8px;border:1px solid #ccc;">Effect</th>
+                        <th style="text-align:left;padding:5px 8px;border:1px solid #ccc;">Clinical Significance</th>
+                    </tr>
+                    <tr>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">Anticoagulants (warfarin)</td>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">INR potentiation (oral AAS)</td>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">Moderate — monitor INR</td>
+                    </tr>
+                    <tr style="background:#f8f8ff;">
+                        <td style="padding:5px 8px;border:1px solid #ccc;">Aromatase inhibitors (anastrozole, letrozole)</td>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">Reduced estrogenic side effects</td>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">Therapeutic (intentional)</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">SERMs (tamoxifen, clomiphene)</td>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">HPTA restoration, gynecomastia prophylaxis</td>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">Therapeutic (PCT)</td>
+                    </tr>
+                    <tr style="background:#f8f8ff;">
+                        <td style="padding:5px 8px;border:1px solid #ccc;">Corticosteroids</td>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">Additive catabolic effect</td>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">Moderate — avoid combination</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">Insulin / insulin secretagogues</td>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">Increased insulin sensitivity (non-diabetic)</td>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">Minor — monitor glucose</td>
+                    </tr>
+                    <tr style="background:#f8f8ff;">
+                        <td style="padding:5px 8px;border:1px solid #ccc;">HMG-CoA reductase inhibitors (statins)</td>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">Reduced efficacy due to lipid counter-regulation</td>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">Moderate — monitor lipids</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">Alcohol</td>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">Additive hepatotoxicity (oral AAS)</td>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">Moderate — avoid during oral cycles</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div style="border-bottom:1px solid #ccc;padding-bottom:14px;margin-bottom:14px;">
+                <p style="font-size:12px;font-weight:700;margin-bottom:4px;">Contraindications</p>
+                <ul style="font-size:13px;padding-left:18px;margin:4px 0 0;">
+                    <li>Known or suspected prostate or breast carcinoma (androgen-sensitive)</li>
+                    <li>Severe hepatic impairment (particularly for oral 17&#945;-alkylated compounds)</li>
+                    <li>Nephrotic syndrome or severe renal impairment</li>
+                    <li>Hypercalcemia (androgens may increase serum calcium)</li>
+                    <li>Pregnancy and lactation</li>
+                    <li>Severe congestive heart failure (fluid retention exacerbation)</li>
+                    <li>Untreated severe obstructive sleep apnea</li>
+                    <li>Polycythemia (hematocrit &gt;54%)</li>
+                    <li>Known hypersensitivity to the compound or ester</li>
+                    <li>Pediatric patients (risk of premature epiphyseal closure)</li>
+                </ul>
+            </div>
+
+            <div style="border-bottom:1px solid #ccc;padding-bottom:14px;margin-bottom:14px;">
+                <p style="font-size:12px;font-weight:700;margin-bottom:4px;">Overdose</p>
+                <p style="font-size:13px;">Acute testosterone toxicity is rare due to the high LD50 in animal models (&gt;2,000 mg/kg). Single-dose overdoses may cause nausea, vomiting, headache, and agitation. Chronic supraphysiologic use is associated with the adverse effects described above. There is no specific antidote; treatment is supportive and symptomatic. Activated charcoal is not effective for parenteral administration. Seek medical attention if overdose is suspected.</p>
+            </div>
+
+            <div style="border-bottom:1px solid #ccc;padding-bottom:14px;margin-bottom:14px;">
+                <p style="font-size:12px;font-weight:700;margin-bottom:4px;">Dosage Forms and Strengths</p>
+                <table style="width:100%;font-size:11px;border-collapse:collapse;">
+                    <tr style="background:#f0f0f8;">
+                        <th style="text-align:left;padding:5px 8px;border:1px solid #ccc;">Compound</th>
+                        <th style="text-align:left;padding:5px 8px;border:1px solid #ccc;">Available Forms</th>
+                        <th style="text-align:left;padding:5px 8px;border:1px solid #ccc;">Typical Therapeutic Dose</th>
+                        <th style="text-align:left;padding:5px 8px;border:1px solid #ccc;">Typical Performance Dose</th>
+                    </tr>
+                    <tr>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">Testosterone Enanthate</td>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">IM injection, 200 mg/mL</td>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">50–100 mg/week</td>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">200–600 mg/week</td>
+                    </tr>
+                    <tr style="background:#f8f8ff;">
+                        <td style="padding:5px 8px;border:1px solid #ccc;">Nandrolone Decanoate</td>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">IM injection, 100–200 mg/mL</td>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">50–100 mg every 2–4 weeks</td>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">200–400 mg/week</td>
+                    </tr>
+                    <tr>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">Oxandrolone</td>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">Tablets, 2.5, 5, 10 mg</td>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">5–20 mg/day</td>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">20–50 mg/day</td>
+                    </tr>
+                    <tr style="background:#f8f8ff;">
+                        <td style="padding:5px 8px;border:1px solid #ccc;">Stanozolol</td>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">Tablets, 2 mg; IM injection, 50 mg/mL</td>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">2–6 mg/day</td>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">20–50 mg/day (oral) / 50 mg EOD (IM)</td>
+                    </tr>
+                </table>
+                <p style="font-size:10px;color:#888;margin-top:4px;">Performance doses are provided for informational reference only. Dosing should be supervised by a qualified medical professional. Therapeutic doses reflect FDA-approved labeling.</p>
+            </div>
+
+            <div style="border-bottom:1px solid #ccc;padding-bottom:14px;margin-bottom:14px;">
+                <p style="font-size:12px;font-weight:700;margin-bottom:4px;">Considerations</p>
+                <p style="font-size:13px;">All AAS are classified as Schedule III controlled substances in the United States except oxandrolone (Schedule II in some formulations). Use without a prescription is illegal. Documented adverse effects include suppression of endogenous hormone production (HPTA), gynecomastia (estrogenic compounds), testicular atrophy, azoospermia, acne, androgenic alopecia in predisposed individuals, increased hematocrit, and potential exacerbation of sleep apnea. Oral 17&#945;-alkylated compounds carry significant hepatotoxic risk. Dyslipidemia (reduced HDL, increased LDL) is compound-specific but well documented. Left ventricular hypertrophy has been observed in long-term supraphysiologic use. Cardiovascular risk remains debated with conflicting evidence — current literature suggests risk is elevated in the presence of other risk factors (obesity, hypertension, dyslipidemia). Post-cycle therapy (PCT) with SERMs (tamoxifen, clomiphene) is commonly employed to restore endogenous testosterone production after cessation.</p>
+            </div>
+
+            <div style="padding-top:8px;">
+                <p style="font-size:11px;color:#666;font-style:italic;">References: Bhasin S, et al. N Engl J Med 1996;335:1–7. Bhasin S, et al. Endocr Rev 2006;27(2):139–163. Young NR, et al. J Am Geriatr Soc 1993;41(2):112–116. Storer TW, et al. J Clin Endocrinol Metab 2003;88(5):2108–2113. Hartgens F, Kuipers H. Sports Med 2004;34(8):513–554. Pope HG, et al. Psychosom Med 2014;76(1):2–11. Anabolic ratios from Vida JA, "Androgens and Anabolic Agents" Academic Press 1969. This information is provided for educational purposes only and does not constitute medical advice.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-section">
+    <h2>Are You Ready to Get <span style="color:#ffd700;">Huge</span>?</h2>
+    <p>Stop being the smallest guy in the room. Start S1RA. Talk to your doctor today — or don't. We're not your mother.</p>
+    <a href="#" class="btn open-modal-btn">Find a Provider Near You</a>
+</section>
+
+<div class="modal-overlay" id="mainModal">
+    <div class="modal">
+        <button class="modal-close" id="modalCloseBtn">✕</button>
+
+        <div class="offer-banner">
+            <span class="tag">Limited Time</span>
+            <h3>🔥 EXCLUSIVE OFFER: <em>20% OFF</em> YOUR FIRST CYCLE</h3>
+            <div class="offer-timer" id="countdown">14:59</div>
+            <div class="social-proof">🔴 <strong id="viewerCount">14</strong> other people are looking at this offer right now</div>
+            <button class="claim-btn" id="claimBtn">CLAIM OFFER NOW</button>
+        </div>
+
+        <div class="modal-body">
+            <h3>Find a <span>S1RA</span> Provider Near You</h3>
+
+            <div class="fake-map">
+                <div class="road h"></div>
+                <div class="road v"></div>
+                <div class="road h2"></div>
+                <div class="road v2"></div>
+                <div class="road h3"></div>
+                <div class="grid-line hl"></div>
+                <div class="grid-line hl2"></div>
+                <div class="grid-line hl3"></div>
+                <div class="grid-line hl4"></div>
+                <div class="grid-line vl"></div>
+                <div class="grid-line vl2"></div>
+                <div class="grid-line vl3"></div>
+                <div class="pin">📍</div>
+                <div class="pin-label">Your Local S1RA Specialist</div>
+            </div>
+
+            <div class="location-info">
+                <div class="addr">
+                    <strong>Iron Haven Gym &amp; Clinic</strong>
+                    <small>2472 Iron St, Muscle Beach, CA 90292</small>
+                </div>
+                <div class="rating">★★★★★<br><small style="color:#888;">247 reviews</small></div>
+            </div>
+
+            <button class="book-btn" id="bookBtn">Book Free Consultation</button>
+        </div>
+    </div>
+</div>
+
+<div class="exit-popup" id="exitPopup">
+    <div class="exit-popup-inner">
+        <h3>WAIT! Are you sure you want to <em>skip your gains</em>?</h3>
+        <p>We'll throw in <strong>free shipping</strong> and a bonus bottle of S1RA if you order in the next <strong id="exitTimer">14:30</strong>.</p>
+        <div class="btn-group">
+            <button class="btn-stay" id="stayBtn">No, I Want to Get Huge</button>
+            <button class="btn-leave" id="leaveBtn">Leave anyway</button>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>This is a parody. Steroids are dangerous. You will probably regret this. We are not responsible for your poor decisions.</p>
+    <p style="margin-top:8px;">
+        <a href="#">Privacy Policy</a> &middot;
+        <a href="#">Terms of Use</a> &middot;
+        <a href="#">Contact</a>
+    </p>
+    <p class="small">© 2026 Sterōid Therapeutics, Inc. S1RA, Sterōid 1, and the S1 logo are trademarks of Sterōid Therapeutics. This content is a joke. Please do not take medical advice from parody websites.</p>
+</footer>
+
+<script>
+(function() {
+    var mainModal = document.getElementById('mainModal');
+    var exitPopup = document.getElementById('exitPopup');
+    var modalClose = document.getElementById('modalCloseBtn');
+    var claimBtn = document.getElementById('claimBtn');
+    var bookBtn = document.getElementById('bookBtn');
+    var stayBtn = document.getElementById('stayBtn');
+    var leaveBtn = document.getElementById('leaveBtn');
+    var countdownEl = document.getElementById('countdown');
+    var exitTimerEl = document.getElementById('exitTimer');
+    var viewerEl = document.getElementById('viewerCount');
+    var openBtns = document.querySelectorAll('.open-modal-btn, .nav .btn');
+
+    var modalOpen = false;
+    var totalSeconds = 899;
+    var viewerInterval;
+
+    function openModal() {
+        modalOpen = true;
+        mainModal.classList.add('active');
+        totalSeconds = 899;
+        updateCountdown();
+        if (viewerInterval) clearInterval(viewerInterval);
+        viewerInterval = setInterval(function() {
+            var v = parseInt(viewerEl.textContent);
+            viewerEl.textContent = Math.max(3, v + Math.floor(Math.random() * 5) - 2);
+        }, 4000);
+    }
+
+    function closeModal() {
+        modalOpen = false;
+        mainModal.classList.remove('active');
+        if (viewerInterval) clearInterval(viewerInterval);
+    }
+
+    function updateCountdown() {
+        if (totalSeconds <= 0) {
+            countdownEl.textContent = '00:00';
+            return;
+        }
+        var m = Math.floor(totalSeconds / 60);
+        var s = totalSeconds % 60;
+        countdownEl.textContent = (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
+        if (exitTimerEl) exitTimerEl.textContent = countdownEl.textContent;
+        totalSeconds--;
+        setTimeout(updateCountdown, 1000);
+    }
+
+    function showExitPopup() {
+        closeModal();
+        setTimeout(function() {
+            exitPopup.classList.add('active');
+        }, 300);
+    }
+
+    function hideExitPopup() {
+        exitPopup.classList.remove('active');
+    }
+
+    for (var i = 0; i < openBtns.length; i++) {
+        openBtns[i].addEventListener('click', function(e) {
+            e.preventDefault();
+            openModal();
+        });
+    }
+
+    modalClose.addEventListener('click', function(e) {
+        e.stopPropagation();
+        showExitPopup();
+    });
+
+    mainModal.addEventListener('click', function(e) {
+        if (e.target === mainModal) showExitPopup();
+    });
+
+    claimBtn.addEventListener('click', function() {
+        alert('🎉 Congratulations! You\'ve saved 20% on your first cycle of S1RA. Your starter pack will arrive in 5-7 business days in an unmarked box. Please have your ID ready.');
+    });
+
+    bookBtn.addEventListener('click', function() {
+        var phone = '(800) 555-S1RA';
+        alert('Thanks for your interest! An S1RA specialist will call you at ' + phone + ' within 24-48 hours. (This is a parody. No one is calling.)');
+    });
+
+    stayBtn.addEventListener('click', function() {
+        hideExitPopup();
+        openModal();
+    });
+
+    leaveBtn.addEventListener('click', function() {
+        hideExitPopup();
+    });
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            if (exitPopup.classList.contains('active')) {
+                hideExitPopup();
+            } else if (mainModal.classList.contains('active')) {
+                showExitPopup();
+            }
+        }
+    });
+})();
+</script>
+
+</body>
+</html>
