@@ -20,8 +20,19 @@
             font-size: 13px;
             letter-spacing: 1px;
             text-transform: uppercase;
+            min-height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
         }
-        .top-bar strong { color: #ffd700; }
+        .top-bar strong { color: #ffd700; white-space: nowrap; }
+        .ticker-text {
+            transition: opacity 0.35s ease;
+        }
+        .ticker-text.fade {
+            opacity: 0;
+        }
         .nav {
             display: flex;
             justify-content: space-between;
@@ -465,8 +476,8 @@
 </head>
 <body>
 
-<div class="top-bar">
-    <strong>BREAKING:</strong> Clinical trial shows S1RA users gain an average of <strong>24 lbs</strong> in 12 weeks
+<div class="top-bar" id="tickerBar">
+    <strong>BREAKING:</strong> <span class="ticker-text" id="tickerText">Clinical trial shows S1RA users gain an average of <strong>24 lbs</strong> in 12 weeks</span>
 </div>
 
 <nav class="nav">
@@ -483,6 +494,11 @@
 
 <section class="hero">
     <div class="hero-badge">FDA-Approved for Mass Gain 💪</div>
+    <div style="margin-top:-12px;margin-bottom:16px;display:flex;justify-content:center;gap:10px;flex-wrap:wrap;">
+        <span style="display:inline-block;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);border-radius:50px;padding:4px 14px;font-size:11px;letter-spacing:.3px;">As Seen on <strong>Joe Rogan</strong></span>
+        <span style="display:inline-block;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);border-radius:50px;padding:4px 14px;font-size:11px;letter-spacing:.3px;">Recommended by <strong>Your Friend Who Won't Shut Up About CrossFit</strong></span>
+        <span style="display:inline-block;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);border-radius:50px;padding:4px 14px;font-size:11px;letter-spacing:.3px;">Endorsed by <strong>That One Guy at the Gym</strong></span>
+    </div>
     <h1>Stop Losing. <em>Start Growing.</em></h1>
     <p>Sterōid 1 (S1RA) is a novel androgen receptor modulator engineered to override your body's natural limiters and unlock brutal, uncompromising growth. Finally, a compound that <strong>wants you to get bigger</strong>.</p>
     <div class="hero-cta">
@@ -626,6 +642,30 @@
                 <td class="cross">She'll ask if you're sick</td>
                 <td class="cross">She'll ask if you're sick</td>
             </tr>
+            <tr>
+                <td><strong>Can You Still Fit in Doorframes?</strong></td>
+                <td class="check">Not anymore (you're too wide)</td>
+                <td class="cross">Yes, easily</td>
+                <td class="cross">Yes, easily</td>
+            </tr>
+            <tr>
+                <td><strong>Are Your Veins Visible From Space?</strong></td>
+                <td class="check">Like a road map</td>
+                <td class="cross">Still searching</td>
+                <td class="cross">Still searching</td>
+            </tr>
+            <tr>
+                <td><strong>Motivation to Go to the Gym</strong></td>
+                <td class="check">Aggressive — you scare newcomers</td>
+                <td class="cross">None (you're tired)</td>
+                <td class="cross">None (you're tired)</td>
+            </tr>
+            <tr>
+                <td><strong>Effect on Your Tinder Bio</strong></td>
+                <td class="check">Adds 3 inches to your listed height</td>
+                <td class="cross">"Just living my best life ✨"</td>
+                <td class="cross">"Just living my best life ✨"</td>
+            </tr>
         </tbody>
     </table>
 </section>
@@ -650,6 +690,12 @@
             <li>Sudden confidence around your boss</li>
             <li>Wife's boyfriend starts getting jealous</li>
             <li>Chronic posing in public restrooms</li>
+            <li>Ex-girlfriends crawling back (not covered by insurance)</li>
+            <li>Permanent flex face — can't relax your lats in public</li>
+            <li>Compulsive mirror-checking in any reflective surface</li>
+            <li>Sudden inability to talk about anything except your macros</li>
+            <li>Bicep vein so prominent it interferes with blood pressure cuffs</li>
+            <li>Uncontrollable urge to tell strangers your deadlift PR</li>
         </ul>
     </div>
 </section>
@@ -1119,13 +1165,25 @@
 </div>
 
 <footer class="footer">
+    <div style="margin-bottom:16px;display:flex;justify-content:center;gap:24px;flex-wrap:wrap;">
+        <a href="#" style="color:#888;text-decoration:none;font-size:13px;">SterōidHub</a>
+        <a href="#" style="color:#888;text-decoration:none;font-size:13px;">OnlyGains</a>
+        <a href="#" style="color:#888;text-decoration:none;font-size:13px;">FacePump</a>
+        <a href="#" style="color:#888;text-decoration:none;font-size:13px;">SwoleTwitter</a>
+        <a href="#" style="color:#888;text-decoration:none;font-size:13px;">LinkedOut</a>
+    </div>
     <p>This is a parody. Steroids are dangerous. You will probably regret this. We are not responsible for your poor decisions.</p>
     <p style="margin-top:8px;">
-        <a href="#">Privacy Policy</a> &middot;
-        <a href="#">Terms of Use</a> &middot;
-        <a href="#">Contact</a>
+        <a href="#">Privacy Policy (we sell your data to supplement companies)</a> &middot;
+        <a href="#">Terms of Use (you waive all rights to fitting in chairs)</a> &middot;
+        <a href="#">Contact (don't)</a>
+    </p>
+    <p style="margin-top:8px;font-size:12px;">
+        <strong>Report Side Effects To:</strong> Your gym bro &middot; Your doctor (if you still have one) &middot; Your local juicehead
     </p>
     <p class="small">© 2026 Sterōid Therapeutics, Inc. S1RA, Sterōid 1, and the S1 logo are trademarks of Sterōid Therapeutics. This content is a joke. Please do not take medical advice from parody websites.</p>
+    <p class="small" style="margin-top:4px;">S1RA Helpline: 1-800-GET-SWOL (no one will answer) &middot; For medical emergencies, contact your nearest urgent care (they've seen it before)</p>
+    <p class="small" style="margin-top:4px;">* These statements have not been evaluated by the FDA. Or anyone with a medical degree. Please don't take steroids.</p>
 </footer>
 
 <script>
@@ -1145,6 +1203,27 @@
     var modalOpen = false;
     var totalSeconds = 899;
     var viewerInterval;
+
+    // News ticker
+    var tickerHeadlines = [
+        'Clinical trial shows S1RA users gain an average of <strong>24 lbs</strong> in 12 weeks',
+        'Doctors furious: "This compound works too well," says leading endocrinologist',
+        'S1RA stock surges 400% after FDA fast-track designation for <strong>"being absolutely jacked"</strong>',
+        'Your gym crush is on S1RA &mdash; here\'s how to tell',
+        'Wife\'s boyfriend demands S1RA prescription after seeing your gains',
+        'World\'s Largest Shoulders now attainable without squats, says S1RA',
+        'Breaking: Local man hasn\'t skipped leg day in 8 years, community "concerned"'
+    ];
+    var tickerIdx = 0;
+    var tickerEl = document.getElementById('tickerText');
+    setInterval(function() {
+        tickerEl.classList.add('fade');
+        setTimeout(function() {
+            tickerIdx = (tickerIdx + 1) % tickerHeadlines.length;
+            tickerEl.innerHTML = tickerHeadlines[tickerIdx];
+            tickerEl.classList.remove('fade');
+        }, 350);
+    }, 5000);
 
     function openModal() {
         modalOpen = true;
