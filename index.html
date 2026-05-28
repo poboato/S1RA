@@ -27,11 +27,28 @@
             gap: 6px;
         }
         .top-bar strong { color: #ffd700; white-space: nowrap; }
-        .ticker-text {
-            transition: opacity 0.35s ease;
+        .ticker-wrap {
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+            height: 1.2em;
+            margin-left: 4px;
         }
-        .ticker-text.fade {
-            opacity: 0;
+        .ticker-slide {
+            position: absolute;
+            white-space: nowrap;
+            will-change: transform;
+        }
+        .ticker-slide.init {
+            transform: translateX(100%);
+        }
+        .ticker-slide.in {
+            transform: translateX(0);
+            transition: transform 0.6s cubic-bezier(.4,.0,.2,1);
+        }
+        .ticker-slide.out {
+            transform: translateX(-105%);
+            transition: transform 0.5s cubic-bezier(.4,.0,.2,1);
         }
         .nav {
             display: flex;
@@ -459,6 +476,187 @@
         }
         .exit-popup-inner .btn-leave:hover { color: #e63946; }
 
+        .particle-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 999999;
+            overflow: hidden;
+        }
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        /* Before/After Slider */
+        .ba-section { background: #fff; }
+        .ba-container {
+            position: relative;
+            max-width: 640px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 16px;
+            user-select: none;
+            cursor: ew-resize;
+            border: 2px solid #e63946;
+        }
+        .ba-container img {
+            display: block;
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+        }
+        .ba-overlay {
+            position: absolute;
+            top: 0; left: 0;
+            width: 50%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .ba-overlay img {
+            position: absolute;
+            top: 0; left: 0;
+            width: 200%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .ba-handle {
+            position: absolute;
+            top: 0; left: 50%;
+            width: 3px;
+            height: 100%;
+            background: #fff;
+            z-index: 10;
+            pointer-events: none;
+            box-shadow: 0 0 8px rgba(0,0,0,.3);
+        }
+        .ba-handle::after {
+            content: '⟷';
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%,-50%);
+            background: #e63946;
+            color: #fff;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: 700;
+            box-shadow: 0 2px 8px rgba(0,0,0,.4);
+        }
+        .ba-labels {
+            position: absolute;
+            bottom: 12px;
+            left: 0; right: 0;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 12px;
+            pointer-events: none;
+            z-index: 5;
+        }
+        .ba-labels span {
+            background: rgba(0,0,0,.7);
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .ba-labels .after-label { background: rgba(230,57,70,.85); }
+
+        /* Quiz */
+        .quiz-overlay {
+            display: none;
+            position: fixed; inset: 0;
+            background: rgba(0,0,0,.85);
+            z-index: 9998;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .quiz-overlay.active { display: flex; }
+        .quiz-modal {
+            background: linear-gradient(135deg,#1a1a2e,#2b2d42);
+            border: 2px solid #ffd700;
+            border-radius: 20px;
+            max-width: 480px;
+            width: 100%;
+            padding: 32px;
+            color: #fff;
+            animation: modalPop .3s ease;
+            text-align: center;
+        }
+        .quiz-tag {
+            display: inline-block;
+            background: #e63946;
+            color: #fff;
+            font-size: 11px;
+            font-weight: 800;
+            padding: 4px 14px;
+            border-radius: 4px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+        .quiz-modal h3 { font-size: 22px; margin-bottom: 6px; }
+        .quiz-modal h3 span { color: #e63946; }
+        .quiz-modal > p { color: #aaa; font-size: 14px; margin-bottom: 24px; }
+        .quiz-progress {
+            color: #666;
+            font-size: 12px;
+            margin-top: 20px;
+        }
+        .quiz-opt {
+            display: block;
+            width: 100%;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: 2px solid #444;
+            border-radius: 12px;
+            background: rgba(255,255,255,.05);
+            color: #fff;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all .2s;
+            text-align: left;
+        }
+        .quiz-opt:hover { border-color: #ffd700; background: rgba(255,215,0,.1); }
+        .quiz-opt:disabled { cursor: default; opacity: .7; }
+        .quiz-opt.correct {
+            border-color: #2a9d8f;
+            background: rgba(42,157,143,.2);
+        }
+        .quiz-opt.wrong {
+            border-color: #e63946;
+            background: rgba(230,57,70,.2);
+            animation: shake .4s ease;
+        }
+        @keyframes shake {
+            0%,100% { transform: translateX(0); }
+            25% { transform: translateX(-8px); }
+            75% { transform: translateX(8px); }
+        }
+        .quiz-feedback {
+            min-height: 24px;
+            font-size: 14px;
+            margin-top: 12px;
+            font-weight: 600;
+        }
+        .quiz-result { display: none; }
+        .quiz-result.active { display: block; }
+        .quiz-result h4 { font-size: 28px; color: #ffd700; margin-bottom: 8px; }
+        .quiz-result p { color: #aaa; font-size: 14px; margin-bottom: 20px; }
+        .quiz-result .btn { font-size: 16px; padding: 14px 32px; }
+
         @media (max-width: 768px) {
             .hero h1 { font-size: 36px; }
             .nav { padding: 12px 20px; }
@@ -477,7 +675,10 @@
 <body>
 
 <div class="top-bar" id="tickerBar">
-    <strong>BREAKING:</strong> <span class="ticker-text" id="tickerText">Clinical trial shows S1RA users gain an average of <strong>24 lbs</strong> in 12 weeks</span>
+    <strong>BREAKING:</strong>
+    <div class="ticker-wrap">
+        <span class="ticker-slide init" id="tickerSlide">Clinical trial shows S1RA users gain an average of <strong>24 lbs</strong> in 12 weeks</span>
+    </div>
 </div>
 
 <nav class="nav">
@@ -1102,11 +1303,47 @@
     </div>
 </section>
 
+<section class="ba-section" id="ba">
+    <h2>See the <span>Transformation</span></h2>
+    <p class="sub">Actual S1RA patient results. 12 weeks. No filter. No regrets. <strong style="color:#e63946;">Drag the slider.</strong></p>
+    <div class="ba-container" id="baContainer">
+        <img src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?w=800&q=80&fit=crop" alt="Before S1RA">
+        <div class="ba-overlay" id="baOverlay">
+            <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=800&q=80&fit=crop" alt="After S1RA">
+        </div>
+        <div class="ba-handle" id="baHandle"></div>
+        <div class="ba-labels">
+            <span>Before (pathetic)</span>
+            <span class="after-label">After (beast mode)</span>
+        </div>
+    </div>
+</section>
+
 <section class="cta-section">
     <h2>Are You Ready to Get <span style="color:#ffd700;">Huge</span>?</h2>
     <p>Stop being the smallest guy in the room. Start S1RA. Talk to your doctor today — or don't. We're not your mother.</p>
     <a href="#" class="btn open-modal-btn">Find a Provider Near You</a>
 </section>
+
+<!-- Quiz Overlay -->
+<div class="quiz-overlay" id="quizOverlay">
+    <div class="quiz-modal">
+        <span class="quiz-tag">ARE YOU READY?</span>
+        <h3>Let's Find Out If S1RA Is <span>Right For You</span></h3>
+        <p>Answer honestly. Your gains depend on it.</p>
+        <div class="quiz-body" id="quizBody">
+            <div class="quiz-question" id="quizQuestion" style="font-size:17px;font-weight:700;margin-bottom:16px;"></div>
+            <div id="quizOptions"></div>
+            <div class="quiz-feedback" id="quizFeedback"></div>
+            <div class="quiz-progress" id="quizProgress"></div>
+        </div>
+        <div class="quiz-result" id="quizResult">
+            <h4>YOU PASSED ✓</h4>
+            <p>Our proprietary algorithm has determined that you are physically, emotionally, and spiritually ready for unprecedented gains. Welcome to the S1RA family. Your old wardrobe won't know what hit it.</p>
+            <a href="#" class="btn" id="quizClaimBtn">Claim Your S1RA Offer</a>
+        </div>
+    </div>
+</div>
 
 <div class="modal-overlay" id="mainModal">
     <div class="modal">
@@ -1146,6 +1383,16 @@
                     <small>2472 Iron St, Muscle Beach, CA 90292</small>
                 </div>
                 <div class="rating">★★★★★<br><small style="color:#888;">247 reviews</small></div>
+            </div>
+
+            <div style="background:linear-gradient(90deg,#ffd700,#ff6b35);border-radius:10px;padding:16px;margin-bottom:12px;text-align:center;">
+                <span style="background:#1a1a2e;color:#ffd700;font-size:10px;font-weight:800;padding:2px 8px;border-radius:3px;letter-spacing:1px;">S1RA SAVINGS CARD</span>
+                <p style="color:#1a1a2e;font-size:14px;font-weight:800;margin:6px 0 2px;">Pay as little as <strong>$0</strong> with this exclusive coupon</p>
+                <p style="color:#1a1a2e;font-size:11px;opacity:.8;">Restrictions apply. You must have a pulse and at least one functioning muscle.</p>
+                <div style="background:#fff;border-radius:6px;padding:8px;margin-top:8px;font-family:'Courier New',monospace;font-size:14px;color:#1a1a2e;letter-spacing:3px;">
+                    ███ ████ ███ ████  ██ █████  ███ ██
+                </div>
+                <p style="color:#1a1a2e;font-size:9px;margin-top:4px;opacity:.6;">Not valid at any pharmacy. Expires when you finish reading this sentence.</p>
             </div>
 
             <button class="book-btn" id="bookBtn">Book Free Consultation</button>
@@ -1204,26 +1451,79 @@
     var totalSeconds = 899;
     var viewerInterval;
 
-    // News ticker
-    var tickerHeadlines = [
-        'Clinical trial shows S1RA users gain an average of <strong>24 lbs</strong> in 12 weeks',
-        'Doctors furious: "This compound works too well," says leading endocrinologist',
-        'S1RA stock surges 400% after FDA fast-track designation for <strong>"being absolutely jacked"</strong>',
-        'Your gym crush is on S1RA &mdash; here\'s how to tell',
-        'Wife\'s boyfriend demands S1RA prescription after seeing your gains',
-        'World\'s Largest Shoulders now attainable without squats, says S1RA',
-        'Breaking: Local man hasn\'t skipped leg day in 8 years, community "concerned"'
-    ];
-    var tickerIdx = 0;
-    var tickerEl = document.getElementById('tickerText');
-    setInterval(function() {
-        tickerEl.classList.add('fade');
-        setTimeout(function() {
-            tickerIdx = (tickerIdx + 1) % tickerHeadlines.length;
-            tickerEl.innerHTML = tickerHeadlines[tickerIdx];
-            tickerEl.classList.remove('fade');
-        }, 350);
-    }, 5000);
+    // News ticker — sliding crawl (CNN style)
+    (function() {
+        var headlines = [
+            'Clinical trial shows S1RA users gain an average of <strong>24 lbs</strong> in 12 weeks',
+            'Doctors furious: "This compound works too well," says leading endocrinologist',
+            'S1RA stock surges 400% after FDA fast-track designation for <strong>"being absolutely jacked"</strong>',
+            'Your gym crush is on S1RA &mdash; here\'s how to tell',
+            'Wife\'s boyfriend demands S1RA prescription after seeing your gains',
+            'World\'s Largest Shoulders now attainable without squats, says S1RA',
+            'Local man hasn\'t skipped leg day in 8 years, community "concerned"'
+        ];
+        var idx = Math.floor(Math.random() * headlines.length);
+        var el = document.getElementById('tickerSlide');
+        if (!el) return;
+        function slideIn() {
+            el.className = 'ticker-slide init';
+            el.innerHTML = headlines[idx];
+            idx = (idx + 1) % headlines.length;
+            requestAnimationFrame(function() {
+                requestAnimationFrame(function() {
+                    el.className = 'ticker-slide in';
+                });
+            });
+        }
+        function slideOut() {
+            el.className = 'ticker-slide out';
+        }
+        el.addEventListener('transitionend', function() {
+            if (el.classList.contains('out')) {
+                slideIn();
+            }
+        });
+        slideIn();
+        setInterval(slideOut, 4000);
+    })();
+
+    // Particle burst on footer link click
+    (function() {
+        var pColors = ['#e63946', '#ffd700', '#ff6b35', '#2a9d8f', '#e9c46a', '#fff', '#f4a261', '#457b9d'];
+        function burst(x, y) {
+            var container = document.getElementById('pc');
+            if (!container) {
+                container = document.createElement('div');
+                container.id = 'pc';
+                container.className = 'particle-container';
+                document.body.appendChild(container);
+            }
+            for (var i = 0; i < 30; i++) {
+                var p = document.createElement('div');
+                p.className = 'particle';
+                var sz = Math.random() * 7 + 3;
+                var ang = Math.random() * Math.PI * 2;
+                var spd = Math.random() * 130 + 40;
+                var dx = Math.cos(ang) * spd;
+                var dy = Math.sin(ang) * spd - 40;
+                var c = pColors[Math.floor(Math.random() * pColors.length)];
+                p.style.cssText = 'width:' + sz + 'px;height:' + sz + 'px;background:' + c + ';left:' + x + 'px;top:' + y + 'px;opacity:1;transition:all ' + (Math.random() * 0.4 + 0.5) + 's ease-out';
+                container.appendChild(p);
+                requestAnimationFrame(function() {
+                    p.style.transform = 'translate(' + dx + 'px,' + dy + 'px)';
+                    p.style.opacity = '0';
+                });
+                setTimeout(function() { if (p.parentNode) p.parentNode.removeChild(p); }, 1200);
+            }
+        }
+        var fl = document.querySelectorAll('.footer a');
+        for (var i = 0; i < fl.length; i++) {
+            fl[i].addEventListener('click', function(e) {
+                e.preventDefault();
+                burst(e.clientX, e.clientY);
+            });
+        }
+    })();
 
     function openModal() {
         modalOpen = true;
@@ -1267,10 +1567,119 @@
         exitPopup.classList.remove('active');
     }
 
+    // Quiz logic
+    var quizOverlay = document.getElementById('quizOverlay');
+    var quizBody = document.getElementById('quizBody');
+    var quizResult = document.getElementById('quizResult');
+    var quizQuestion = document.getElementById('quizQuestion');
+    var quizOptions = document.getElementById('quizOptions');
+    var quizFeedback = document.getElementById('quizFeedback');
+    var quizProgress = document.getElementById('quizProgress');
+    var quizClaimBtn = document.getElementById('quizClaimBtn');
+
+    var quizData = [
+        { q: 'Are you happy with your current physique?', a: 1,
+          opts: ['Yes, I\'m perfectly content', 'No, I want to be absolutely massive'],
+          fb: ['Wrong. Contentment is for people who aren\'t on S1RA.', 'Correct. You\'re already thinking like a champion.'] },
+        { q: 'Do you enjoy fitting into normal-sized chairs?', a: 1,
+          opts: ['Yes, comfort matters to me', 'No, chairs are for the weak'],
+          fb: ['Wrong. Comfort is the enemy of growth. Your lats need their own seat.', 'Correct. Real S1RA users require two chairs.'] },
+        { q: 'Are you afraid of looking better than your friends?', a: 1,
+          opts: ['Yes, I don\'t want to stand out', 'No, I want them to feel inadequate'],
+          fb: ['Wrong. Standing out is the whole point of S1RA.', 'Correct. Their insecurity is your protein.'] }
+    ];
+    var quizIdx = 0;
+
+    function showQuiz() {
+        quizIdx = 0;
+        quizBody.style.display = 'block';
+        quizResult.classList.remove('active');
+        quizOverlay.classList.add('active');
+        renderQuizQuestion();
+    }
+
+    function renderQuizQuestion() {
+        if (quizIdx >= quizData.length) {
+            quizBody.style.display = 'none';
+            quizResult.classList.add('active');
+            return;
+        }
+        var q = quizData[quizIdx];
+        quizQuestion.textContent = q.q;
+        quizOptions.innerHTML = '';
+        for (var i = 0; i < q.opts.length; i++) {
+            var btn = document.createElement('button');
+            btn.className = 'quiz-opt';
+            btn.textContent = q.opts[i];
+            btn.setAttribute('data-i', i);
+            btn.addEventListener('click', function(e) {
+                var chosen = parseInt(this.getAttribute('data-i'));
+                handleQuizAnswer(chosen);
+            });
+            quizOptions.appendChild(btn);
+        }
+        quizFeedback.textContent = '';
+        quizProgress.textContent = 'Question ' + (quizIdx + 1) + ' of ' + quizData.length;
+    }
+
+    function handleQuizAnswer(chosen) {
+        var q = quizData[quizIdx];
+        var btns = quizOptions.querySelectorAll('.quiz-opt');
+        if (chosen === q.a) {
+            for (var i = 0; i < btns.length; i++) btns[i].disabled = true;
+            btns[chosen].classList.add('correct');
+            quizFeedback.innerHTML = '✓ ' + q.fb[1];
+            quizIdx++;
+            setTimeout(renderQuizQuestion, 1400);
+        } else {
+            btns[chosen].classList.add('wrong');
+            quizFeedback.innerHTML = '✗ ' + q.fb[0];
+            setTimeout(function() {
+                btns[chosen].classList.remove('wrong');
+                btns[chosen].disabled = false;
+                for (var i = 0; i < btns.length; i++) {
+                    if (i !== chosen) btns[i].disabled = false;
+                }
+                quizFeedback.textContent = '';
+            }, 1400);
+        }
+    }
+
+    quizClaimBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        quizOverlay.classList.remove('active');
+        openModal();
+    });
+
+    // Before/After slider
+    (function() {
+        var container = document.getElementById('baContainer');
+        if (!container) return;
+        var overlay = document.getElementById('baOverlay');
+        var handle = document.getElementById('baHandle');
+        var isDragging = false;
+        function moveSlider(x) {
+            var rect = container.getBoundingClientRect();
+            var pct = Math.max(0, Math.min(100, (x - rect.left) / rect.width * 100));
+            overlay.style.width = pct + '%';
+            handle.style.left = pct + '%';
+        }
+        handle.addEventListener('mousedown', function(e) { e.preventDefault(); isDragging = true; });
+        document.addEventListener('mousemove', function(e) { if (isDragging) moveSlider(e.clientX); });
+        document.addEventListener('mouseup', function() { isDragging = false; });
+        handle.addEventListener('touchstart', function(e) { e.preventDefault(); isDragging = true; });
+        document.addEventListener('touchmove', function(e) { if (isDragging) moveSlider(e.touches[0].clientX); });
+        document.addEventListener('touchend', function() { isDragging = false; });
+    })();
+
     for (var i = 0; i < openBtns.length; i++) {
         openBtns[i].addEventListener('click', function(e) {
             e.preventDefault();
-            openModal();
+            if (quizOverlay) {
+                showQuiz();
+            } else {
+                openModal();
+            }
         });
     }
 
