@@ -1490,31 +1490,31 @@
     // Particle burst on footer link click
     (function() {
         var pColors = ['#e63946', '#ffd700', '#ff6b35', '#2a9d8f', '#e9c46a', '#fff', '#f4a261', '#457b9d'];
+        var pContainer = null;
+        function spawnOne(ox, oy) {
+            if (!pContainer) {
+                pContainer = document.createElement('div');
+                pContainer.className = 'particle-container';
+                document.body.appendChild(pContainer);
+            }
+            var p = document.createElement('div');
+            p.className = 'particle';
+            var sz = Math.random() * 7 + 3;
+            var ang = Math.random() * Math.PI * 2;
+            var spd = Math.random() * 130 + 40;
+            var dx = Math.cos(ang) * spd;
+            var dy = Math.sin(ang) * spd - 40;
+            var c = pColors[Math.floor(Math.random() * pColors.length)];
+            p.style.cssText = 'width:' + sz + 'px;height:' + sz + 'px;background:' + c + ';left:' + ox + 'px;top:' + oy + 'px;opacity:1;transition:all ' + (Math.random() * 0.4 + 0.5) + 's ease-out';
+            pContainer.appendChild(p);
+            requestAnimationFrame(function() {
+                p.style.transform = 'translate(' + dx + 'px,' + dy + 'px)';
+                p.style.opacity = '0';
+            });
+            setTimeout(function() { if (p.parentNode) p.parentNode.removeChild(p); }, 1200);
+        }
         function burst(x, y) {
-            var container = document.getElementById('pc');
-            if (!container) {
-                container = document.createElement('div');
-                container.id = 'pc';
-                container.className = 'particle-container';
-                document.body.appendChild(container);
-            }
-            for (var i = 0; i < 30; i++) {
-                var p = document.createElement('div');
-                p.className = 'particle';
-                var sz = Math.random() * 7 + 3;
-                var ang = Math.random() * Math.PI * 2;
-                var spd = Math.random() * 130 + 40;
-                var dx = Math.cos(ang) * spd;
-                var dy = Math.sin(ang) * spd - 40;
-                var c = pColors[Math.floor(Math.random() * pColors.length)];
-                p.style.cssText = 'width:' + sz + 'px;height:' + sz + 'px;background:' + c + ';left:' + x + 'px;top:' + y + 'px;opacity:1;transition:all ' + (Math.random() * 0.4 + 0.5) + 's ease-out';
-                container.appendChild(p);
-                requestAnimationFrame(function() {
-                    p.style.transform = 'translate(' + dx + 'px,' + dy + 'px)';
-                    p.style.opacity = '0';
-                });
-                setTimeout(function() { if (p.parentNode) p.parentNode.removeChild(p); }, 1200);
-            }
+            for (var i = 0; i < 30; i++) spawnOne(x, y);
         }
         var fl = document.querySelectorAll('.footer a');
         for (var i = 0; i < fl.length; i++) {
