@@ -96,7 +96,7 @@
         }
         var fl = document.querySelectorAll('.footer a');
         var flMessages = {};
-        flMessages['SterōidHub'] = 'Welcome to SterōidHub. Your feed: 47 new posts tagged #NattyOrNot and 12 from BroScienceâ„¢.';
+        flMessages['SterōidHub'] = 'Welcome to SterōidHub. Your feed: 47 new posts tagged #NattyOrNot and 12 from BroScience™.';
         flMessages['OnlyGains'] = 'Welcome to OnlyGains. Subscribe for $19.99/mo (vegan tier) or $49.99/mo (unlimited trenbolone content).';
         flMessages['FacePump'] = 'FacePump: The social network where you can only post pump photos. Your last post got 47 flexes and 3 jealous comments.';
         flMessages['SwoleTwitter'] = 'SwoleTwitter — Trending: #ChestDay, #LegDayNeverSkip, #WhereIsMyPreWorkout.';
@@ -219,12 +219,12 @@
         if (chosen === q.a) {
             for (var i = 0; i < btns.length; i++) btns[i].disabled = true;
             btns[chosen].classList.add('correct');
-            quizFeedback.innerHTML = 'âœ“ ' + q.fb[1];
+            quizFeedback.innerHTML = '✓ ' + q.fb[1];
             quizIdx++;
             setTimeout(renderQuizQuestion, 1400);
         } else {
             btns[chosen].classList.add('wrong');
-            quizFeedback.innerHTML = 'âœ— ' + q.fb[0];
+            quizFeedback.innerHTML = '✗ ' + q.fb[0];
             setTimeout(function() {
                 btns[chosen].classList.remove('wrong');
                 btns[chosen].disabled = false;
@@ -310,4 +310,101 @@
             }
         }
     });
+
+    // Dose Calculator
+    (function() {
+        var btn = document.getElementById('calcBtn');
+        var weightEl = document.getElementById('calcWeight');
+        var goalEl = document.getElementById('calcGoal');
+        var expEl = document.getElementById('calcExp');
+        var fillEl = document.getElementById('calcGaugeFill');
+        var scoopsEl = document.getElementById('calcScoops');
+        var descEl = document.getElementById('calcDesc');
+        if (!btn || !weightEl || !goalEl || !expEl || !fillEl || !scoopsEl || !descEl) return;
+        btn.addEventListener('click', function() {
+            var w = parseFloat(weightEl.value) || 180;
+            var g = parseFloat(goalEl.value) || 1.5;
+            var e = parseFloat(expEl.value) || 1.3;
+            var base = w / 10;
+            var raw = base * g * e;
+            var jitter = 0.9 + Math.random() * 0.2;
+            var scoops = Math.round(raw * jitter);
+            var pct = Math.min(100, scoops);
+            fillEl.style.height = pct + '%';
+            scoopsEl.textContent = scoops + ' scoops';
+            var msgs = [
+                'Buckle up. Your fork is about to get a workout.',
+                'Your waistline is filing a formal complaint.',
+                'Doorframes nationwide are on high alert.',
+                'Your shirts have started a support group.',
+                'Warning: may cause spontaneous muscle growth.',
+                'Your gym bro will be "proud but concerned."',
+                'Estimated time to outgrow your wardrobe: 2 weeks.',
+                'Your reflection is already getting more confident.',
+            ];
+            descEl.textContent = msgs[Math.floor(Math.random() * msgs.length)];
+        });
+        btn.click();
+    })();
+
+    // FAQ Accordion
+    (function() {
+        var items = document.querySelectorAll('.faq-item');
+        for (var i = 0; i < items.length; i++) {
+            (function(item) {
+                var q = item.querySelector('.faq-q');
+                if (!q) return;
+                q.addEventListener('click', function() {
+                    for (var j = 0; j < items.length; j++) {
+                        if (items[j] !== item) items[j].classList.remove('active');
+                    }
+                    item.classList.toggle('active');
+                });
+            })(items[i]);
+        }
+    })();
+
+    // News Generator
+    (function() {
+        var btn = document.getElementById('newsGenBtn');
+        var textEl = document.getElementById('newsGenText');
+        var display = document.getElementById('newsGenDisplay');
+        if (!btn || !textEl) return;
+        var headlines = [
+            'Local Man Gains 40 lbs, Doors Declare War',
+            'S1RA Announces "Buy One Cycle, Get a Spare Rib Free" Promotion',
+            'Study Finds S1RA Users 3x More Likely to Flex in Public Restrooms',
+            'FDA Considering Reclassifying S1RA as a "Performance Enhancing Lifestyle Choice"',
+            'Man on S1RA Mistaken for a Small Building; Residents Concerned',
+            'Your Ex's New Boyfriend Reportedly "Nervous" About Your S1RA Results',
+            'S1RA Named Official Sponsor of "I Don't Skip Leg Day" Championship',
+            'Breaking: Bicep Curls Now Considered "Foreplay" by S1RA Users',
+            'S1RA Causes Permanent Case of Main Character Energy',
+            'Report: 9 out of 10 S1RA Users Can't Stop Talking About S1RA',
+            'S1RA Clinic Offers "Size Does Matter" Guarantee — Literally in Writing',
+            'S1RA Introduces "Gains Without Pain" Plan: Results May Vary, Pants Will Not Fit',
+            'CrossFit Community Shaken as S1RA Users Start Doing Actual Work',
+            'Man on S1RA Tries to Buy Shirt, Discovers Clothing Is "Suggestive Sizing"',
+            'S1RA Stock Up 400% After CEO Bench Presses 405 at Press Conference',
+            'WADA Bans S1RA — Athletes Respond with "Like We Care"',
+            'Your Girlfriend's Dad Now Asks You for Spotting Advice',
+            'Breaking: S1RA Linked to Increased Tendency to Wear Tank Tops in Winter',
+        ];
+        var lastIdx = -1;
+        btn.addEventListener('click', function() {
+            var idx;
+            do { idx = Math.floor(Math.random() * headlines.length); } while (idx === lastIdx && headlines.length > 1);
+            lastIdx = idx;
+            textEl.textContent = headlines[idx];
+            textEl.style.opacity = 0;
+            textEl.style.transform = 'translateY(8px)';
+            requestAnimationFrame(function() {
+                requestAnimationFrame(function() {
+                    textEl.style.transition = 'opacity .3s, transform .3s';
+                    textEl.style.opacity = 1;
+                    textEl.style.transform = 'translateY(0)';
+                });
+            });
+        });
+    })();
 })();

@@ -43,7 +43,7 @@
 </section>
 
 <div class="warning">
-    <strong>âš  S1RA IS NOT FOR EVERYONE.</strong> Do not take if you are happy with your current physique, enjoy fitting into chairs, or are afraid of looking better than your friends.
+    <strong>⚠ S1RA IS NOT FOR EVERYONE.</strong> Do not take if you are happy with your current physique, enjoy fitting into chairs, or are afraid of looking better than your friends.
 </div>
 
 <section id="results">
@@ -198,8 +198,8 @@
             <tr>
                 <td><strong>Effect on Your Tinder Bio</strong></td>
                 <td class="check">Adds 3 inches to your listed height</td>
-                <td class="cross">"Just living my best life âœ¨"</td>
-                <td class="cross">"Just living my best life âœ¨"</td>
+                <td class="cross">"Just living my best life ✨"</td>
+                <td class="cross">"Just living my best life ✨"</td>
             </tr>
         </tbody>
     </table>
@@ -215,7 +215,7 @@
     </div>
 
     <div class="sidebar-effects">
-        <h3>Most Common Side Effects (reported in â‰¥5% of patients)</h3>
+        <h3>Most Common Side Effects (reported in ≥5% of patients)</h3>
         <ul>
             <li>Doorframe navigation difficulty</li>
             <li>Spontaneous pec flexing in mirrors</li>
@@ -247,6 +247,88 @@
     </div>
 </section>
 
+<!-- Dose Calculator -->
+<section class="calc-section" id="dose-calc">
+    <h2>Find Your <span>Dose</span></h2>
+    <p class="sub">Enter your stats and let our proprietary algorithm calculate your exact S1RA dosage in scoops of pure gainz.</p>
+    <div class="calc-box">
+        <div class="calc-inputs">
+            <label>Your Weight: <input type="number" id="calcWeight" value="180" min="80" max="500"> lbs</label>
+            <label>Goal:
+                <select id="calcGoal">
+                    <option value="1.0">Get Shredded</option>
+                    <option value="1.5" selected>Get Huge</option>
+                    <option value="2.5">Become Unrecognizable</option>
+                    <option value="4.0">Exceed Human Limits</option>
+                </select>
+            </label>
+            <label>Experience:
+                <select id="calcExp">
+                    <option value="1.0">First Cycle (Newbie Gains)</option>
+                    <option value="1.3" selected>Intermediate (You've Googled "steroids")</option>
+                    <option value="1.8">Advanced (Your bench &gt; your IQ)</option>
+                    <option value="2.5">Professional (More needles than a porcupine)</option>
+                </select>
+            </label>
+            <button class="btn" id="calcBtn">Calculate My Dose</button>
+        </div>
+        <div class="calc-result" id="calcResult">
+            <div class="calc-result-inner">
+                <div class="calc-gauge" id="calcGauge">
+                    <div class="calc-gauge-fill" id="calcGaugeFill"></div>
+                </div>
+                <p class="calc-scoops" id="calcScoops">—</p>
+                <p class="calc-desc" id="calcDesc">Enter your details and hit calculate</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+    <h2>Frequently Asked <span>Questions</span></h2>
+    <p class="sub">All the answers you didn't know you needed — and some you definitely didn't ask for.</p>
+    <div class="faq-list" id="faqList">
+        <div class="faq-item">
+            <div class="faq-q">Will S1RA make my girlfriend leave me? <span class="faq-arrow">▾</span></div>
+            <div class="faq-a">Yes, but you'll be too jacked to care. She left because you were too small. Now that you're on S1RA, you won't even fit through her front door. Win-win.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">Can I take S1RA with my pre-workout? <span class="faq-arrow">▾</span></div>
+            <div class="faq-a">Absolutely. In fact, we recommend washing down your S1RA with a scoop of the strongest pre-workout you can find. If your heart rate isn't in the danger zone, you're doing it wrong.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">How fast will I see results? <span class="faq-arrow">▾</span></div>
+            <div class="faq-a">Visible results in under 2 weeks — faster if you stare at yourself in the mirror for 4+ hours daily (recommended). Your coworkers will start asking questions by day 10.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">Will S1RA show up on a drug test? <span class="faq-arrow">▾</span></div>
+            <div class="faq-a">Only if the lab screens for "being absolutely massive." Our proprietary formula is undetectable by standard panels. That said, you will absolutely test positive for being awesome.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">Do I need a prescription? <span class="faq-arrow">▾</span></div>
+            <div class="faq-a">Technically yes. But our network of "doctors" (a guy named Dave who owns a stethoscope) can approve you via a 3-second video call. Dave may or may not be a real doctor. Results may vary.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">What if I miss a dose? <span class="faq-arrow">▾</span></div>
+            <div class="faq-a">Don't. Missing a dose is like skipping leg day — a betrayal of everything S1RA stands for. If you miss a dose, do 50 push-ups as penance and resume your regular schedule. Your gains will forgive you.</div>
+        </div>
+    </div>
+</section>
+
+<!-- News Generator -->
+<section class="news-gen-section" id="news-gen">
+    <h2><span>Breaking</span> News Generator</h2>
+    <p class="sub">Can't wait for the next S1RA headline? Generate your own. Every headline is 100% real (disclaimer: none of these are real).</p>
+    <div class="news-gen-box">
+        <div class="news-gen-display" id="newsGenDisplay">
+            <span class="news-gen-tag">BREAKING</span>
+            <p id="newsGenText">Click the button below to generate the latest S1RA news</p>
+        </div>
+        <button class="btn" id="newsGenBtn">Generate Breaking News</button>
+    </div>
+</section>
+
 <section id="drugfacts" style="background:#fff;max-width:100% !important;padding:72px 40px;border-top:4px solid #1a1a2e;border-bottom:4px solid #1a1a2e;">
     <div style="max-width:900px;margin:0 auto;font-family:'Courier New',monospace;">
         <div style="border:3px solid #1a1a2e;padding:32px;background:#fff;">
@@ -271,7 +353,7 @@
                         <td style="padding:6px 8px;border:1px solid #ccc;">100</td>
                         <td style="padding:6px 8px;border:1px solid #ccc;">100</td>
                         <td style="padding:6px 8px;border:1px solid #ccc;">IM injection</td>
-                        <td style="padding:6px 8px;border:1px solid #ccc;">5â€“7 days</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">5–7 days</td>
                         <td style="padding:6px 8px;border:1px solid #ccc;">High (aromatizes)</td>
                     </tr>
                     <tr style="background:#f8f8ff;">
@@ -287,7 +369,7 @@
                         <td style="padding:6px 8px;border:1px solid #ccc;">500</td>
                         <td style="padding:6px 8px;border:1px solid #ccc;">500</td>
                         <td style="padding:6px 8px;border:1px solid #ccc;">IM injection</td>
-                        <td style="padding:6px 8px;border:1px solid #ccc;">48â€“72 h</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">48–72 h</td>
                         <td style="padding:6px 8px;border:1px solid #ccc;">None (non-aromatizing)</td>
                     </tr>
                     <tr style="background:#f8f8ff;">
@@ -295,7 +377,7 @@
                         <td style="padding:6px 8px;border:1px solid #ccc;">200</td>
                         <td style="padding:6px 8px;border:1px solid #ccc;">60</td>
                         <td style="padding:6px 8px;border:1px solid #ccc;">Oral</td>
-                        <td style="padding:6px 8px;border:1px solid #ccc;">4â€“6 h</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">4–6 h</td>
                         <td style="padding:6px 8px;border:1px solid #ccc;">High (aromatizes)</td>
                     </tr>
                     <tr>
@@ -327,7 +409,7 @@
                         <td style="padding:6px 8px;border:1px solid #ccc;">88</td>
                         <td style="padding:6px 8px;border:1px solid #ccc;">33</td>
                         <td style="padding:6px 8px;border:1px solid #ccc;">Oral / IM</td>
-                        <td style="padding:6px 8px;border:1px solid #ccc;">5â€“7 h (oral)</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">5–7 h (oral)</td>
                         <td style="padding:6px 8px;border:1px solid #ccc;">None</td>
                     </tr>
                 </table>
@@ -385,7 +467,7 @@
                 <p style="font-size:12px;font-weight:700;margin-bottom:4px;">Compound-Specific Notes</p>
 
                 <p style="font-size:13px;font-weight:700;margin:8px 0 2px;">Testosterone Enanthate / Cypionate</p>
-                <p style="font-size:12px;color:#444;margin:0 0 4px 12px;">The reference standard. Aromatizes to estradiol, requiring estrogen management at supraphysiologic doses. Esters extend half-life for weekly dosing. Used in hormone replacement therapy (50â€“100 mg/wk) and performance contexts (200â€“600 mg/wk).</p>
+                <p style="font-size:12px;color:#444;margin:0 0 4px 12px;">The reference standard. Aromatizes to estradiol, requiring estrogen management at supraphysiologic doses. Esters extend half-life for weekly dosing. Used in hormone replacement therapy (50–100 mg/wk) and performance contexts (200–600 mg/wk).</p>
 
                 <p style="font-size:13px;font-weight:700;margin:8px 0 2px;">Nandrolone Decanoate (Deca-Durabolin)</p>
                 <p style="font-size:12px;color:#444;margin:0 0 4px 12px;">Favorable anabolic:androgenic ratio (125:37). Lower androgenic side effects than testosterone. Weakly aromatizes — estrogenic side effects are possible but less frequent. Long half-life (15 days) enables less frequent injection. Commonly stacked with testosterone. Potential for prolactin-related side effects at high doses.</p>
@@ -394,13 +476,13 @@
                 <p style="font-size:12px;color:#444;margin:0 0 4px 12px;">A potent 19-nor androgen with very high AR affinity (5x testosterone). Does not aromatize to estrogen. Binds strongly to progesterone and androgen receptors. Rapid action via acetate ester. Associated with significantly increased nitrogen retention, IGF-1 production, and nutrient partitioning. Short half-life requires frequent (EOD) injection. Not FDA-approved for human use; used in veterinary medicine as a growth promoter in cattle.</p>
 
                 <p style="font-size:13px;font-weight:700;margin:8px 0 2px;">Methandrostenolone (Dianabol)</p>
-                <p style="font-size:12px;color:#444;margin:0 0 4px 12px;">Oral 17&#945;-alkylated AAS. Rapid onset of effects. Aromatizes to a potent estrogen, often requiring aromatase inhibitor use. Significant hepatotoxicity potential due to 17&#945;-alkylation — liver enzyme elevation is common. Associated with rapid gains in muscle mass and strength over 4â€“6 week cycles. Half-life of 4â€“6 hours necessitates multiple daily doses.</p>
+                <p style="font-size:12px;color:#444;margin:0 0 4px 12px;">Oral 17&#945;-alkylated AAS. Rapid onset of effects. Aromatizes to a potent estrogen, often requiring aromatase inhibitor use. Significant hepatotoxicity potential due to 17&#945;-alkylation — liver enzyme elevation is common. Associated with rapid gains in muscle mass and strength over 4–6 week cycles. Half-life of 4–6 hours necessitates multiple daily doses.</p>
 
                 <p style="font-size:13px;font-weight:700;margin:8px 0 2px;">Oxandrolone (Anavar)</p>
-                <p style="font-size:12px;color:#444;margin:0 0 4px 12px;">Oral AAS with very favorable anabolic:androgenic ratio (320:24). Minimal hepatotoxicity compared to other oral AAS — FDA-approved for muscle wasting conditions (HIV, severe burns). Low androgenic side effect profile makes it suitable for female and adolescent patients under medical supervision. Does not aromatize. Strength gains are modest (10â€“15%) compared to injectable compounds, but with a favorable side effect profile when used at therapeutic doses (10â€“20 mg/day).</p>
+                <p style="font-size:12px;color:#444;margin:0 0 4px 12px;">Oral AAS with very favorable anabolic:androgenic ratio (320:24). Minimal hepatotoxicity compared to other oral AAS — FDA-approved for muscle wasting conditions (HIV, severe burns). Low androgenic side effect profile makes it suitable for female and adolescent patients under medical supervision. Does not aromatize. Strength gains are modest (10–15%) compared to injectable compounds, but with a favorable side effect profile when used at therapeutic doses (10–20 mg/day).</p>
 
                 <p style="font-size:13px;font-weight:700;margin:8px 0 2px;">Stanozolol (Winstrol)</p>
-                <p style="font-size:12px;color:#444;margin:0 0 4px 12px;">17&#945;-alkylated AAS available in oral and injectable forms. Does not aromatize. Hepatotoxic with prolonged use. Low estrogenic activity makes it useful for cutting phases. Negative impact on HDL cholesterol is well documented (HDL reduction of 40â€“60% at 6 mg/day). Contraindicated in patients with hyperlipidemia or cardiovascular disease. Increases collagen synthesis and has been used for tendon and ligament health in some contexts.</p>
+                <p style="font-size:12px;color:#444;margin:0 0 4px 12px;">17&#945;-alkylated AAS available in oral and injectable forms. Does not aromatize. Hepatotoxic with prolonged use. Low estrogenic activity makes it useful for cutting phases. Negative impact on HDL cholesterol is well documented (HDL reduction of 40–60% at 6 mg/day). Contraindicated in patients with hyperlipidemia or cardiovascular disease. Increases collagen synthesis and has been used for tendon and ligament health in some contexts.</p>
 
                 <p style="font-size:13px;font-weight:700;margin:8px 0 2px;">Boldenone Undecylenate (Equipoise)</p>
                 <p style="font-size:12px;color:#444;margin:0 0 4px 12px;">Testosterone derivative with a double bond at C1,2 conferring reduced androgenic activity. Weak aromatizer. Very long half-life (14 days) due to undecylenate ester. Originally developed for veterinary use. Increases appetite in some users. Mild compound with slow but steady gains. Less suppressive of endogenous testosterone than more potent AAS.</p>
@@ -412,10 +494,10 @@
             <div style="border-bottom:1px solid #ccc;padding-bottom:14px;margin-bottom:14px;">
                 <p style="font-size:12px;font-weight:700;margin-bottom:4px;">Other Documented Effects</p>
                 <ul style="font-size:13px;padding-left:18px;margin:4px 0 0;">
-                    <li>Increased bone mineral density (2â€“5% over 6 months, nandrolone and testosterone)</li>
-                    <li>Reduced fat mass (dose-dependent, avg âˆ’2.5 kg at 600 mg/wk testosterone)</li>
+                    <li>Increased bone mineral density (2–5% over 6 months, nandrolone and testosterone)</li>
+                    <li>Reduced fat mass (dose-dependent, avg −2.5 kg at 600 mg/wk testosterone)</li>
                     <li>Improved visceral adipose tissue profile</li>
-                    <li>Enhanced erythropoiesis (hemoglobin +1.5â€“2.0 g/dL, most pronounced with boldenone)</li>
+                    <li>Enhanced erythropoiesis (hemoglobin +1.5–2.0 g/dL, most pronounced with boldenone)</li>
                     <li>Improved mood and libido in hypogonadal populations</li>
                     <li>Increased satellite cell content in trained muscle</li>
                     <li>Improved nitrogen balance in catabolic states</li>
@@ -463,7 +545,7 @@
                     </tr>
                     <tr style="background:#f8f8ff;">
                         <td style="padding:6px 8px;border:1px solid #ccc;">Elimination Half-Life</td>
-                        <td style="padding:6px 8px;border:1px solid #ccc;">5â€“7 days (enanthate ester)</td>
+                        <td style="padding:6px 8px;border:1px solid #ccc;">5–7 days (enanthate ester)</td>
                         <td style="padding:6px 8px;border:1px solid #ccc;">15 days (decanoate ester)</td>
                         <td style="padding:6px 8px;border:1px solid #ccc;">9 hours</td>
                     </tr>
@@ -489,32 +571,32 @@
                     </tr>
                     <tr>
                         <td style="padding:5px 8px;border:1px solid #ccc;">Testosterone Enanthate</td>
-                        <td style="padding:5px 8px;border:1px solid #ccc;">2â€“3 months</td>
-                        <td style="padding:5px 8px;border:1px solid #ccc;">1â€“2 months</td>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">2–3 months</td>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">1–2 months</td>
                         <td style="padding:5px 8px;border:1px solid #ccc;">Up to 12 months</td>
                     </tr>
                     <tr style="background:#f8f8ff;">
                         <td style="padding:5px 8px;border:1px solid #ccc;">Nandrolone Decanoate</td>
-                        <td style="padding:5px 8px;border:1px solid #ccc;">12â€“18 months</td>
-                        <td style="padding:5px 8px;border:1px solid #ccc;">6â€“9 months</td>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">12–18 months</td>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">6–9 months</td>
                         <td style="padding:5px 8px;border:1px solid #ccc;">Up to 12 months</td>
                     </tr>
                     <tr>
                         <td style="padding:5px 8px;border:1px solid #ccc;">Trenbolone Acetate</td>
-                        <td style="padding:5px 8px;border:1px solid #ccc;">4â€“5 months</td>
-                        <td style="padding:5px 8px;border:1px solid #ccc;">1â€“2 months</td>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">4–5 months</td>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">1–2 months</td>
                         <td style="padding:5px 8px;border:1px solid #ccc;">Up to 6 months</td>
                     </tr>
                     <tr style="background:#f8f8ff;">
                         <td style="padding:5px 8px;border:1px solid #ccc;">Oxandrolone</td>
-                        <td style="padding:5px 8px;border:1px solid #ccc;">2â€“4 weeks</td>
-                        <td style="padding:5px 8px;border:1px solid #ccc;">1â€“2 weeks</td>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">2–4 weeks</td>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">1–2 weeks</td>
                         <td style="padding:5px 8px;border:1px solid #ccc;">Up to 3 months</td>
                     </tr>
                     <tr>
                         <td style="padding:5px 8px;border:1px solid #ccc;">Stanozolol</td>
-                        <td style="padding:5px 8px;border:1px solid #ccc;">3â€“6 weeks</td>
-                        <td style="padding:5px 8px;border:1px solid #ccc;">2â€“3 weeks</td>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">3–6 weeks</td>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">2–3 weeks</td>
                         <td style="padding:5px 8px;border:1px solid #ccc;">Up to 6 months</td>
                     </tr>
                 </table>
@@ -600,26 +682,26 @@
                     <tr>
                         <td style="padding:5px 8px;border:1px solid #ccc;">Testosterone Enanthate</td>
                         <td style="padding:5px 8px;border:1px solid #ccc;">IM injection, 200 mg/mL</td>
-                        <td style="padding:5px 8px;border:1px solid #ccc;">50â€“100 mg/week</td>
-                        <td style="padding:5px 8px;border:1px solid #ccc;">200â€“600 mg/week</td>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">50–100 mg/week</td>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">200–600 mg/week</td>
                     </tr>
                     <tr style="background:#f8f8ff;">
                         <td style="padding:5px 8px;border:1px solid #ccc;">Nandrolone Decanoate</td>
-                        <td style="padding:5px 8px;border:1px solid #ccc;">IM injection, 100â€“200 mg/mL</td>
-                        <td style="padding:5px 8px;border:1px solid #ccc;">50â€“100 mg every 2â€“4 weeks</td>
-                        <td style="padding:5px 8px;border:1px solid #ccc;">200â€“400 mg/week</td>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">IM injection, 100–200 mg/mL</td>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">50–100 mg every 2–4 weeks</td>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">200–400 mg/week</td>
                     </tr>
                     <tr>
                         <td style="padding:5px 8px;border:1px solid #ccc;">Oxandrolone</td>
                         <td style="padding:5px 8px;border:1px solid #ccc;">Tablets, 2.5, 5, 10 mg</td>
-                        <td style="padding:5px 8px;border:1px solid #ccc;">5â€“20 mg/day</td>
-                        <td style="padding:5px 8px;border:1px solid #ccc;">20â€“50 mg/day</td>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">5–20 mg/day</td>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">20–50 mg/day</td>
                     </tr>
                     <tr style="background:#f8f8ff;">
                         <td style="padding:5px 8px;border:1px solid #ccc;">Stanozolol</td>
                         <td style="padding:5px 8px;border:1px solid #ccc;">Tablets, 2 mg; IM injection, 50 mg/mL</td>
-                        <td style="padding:5px 8px;border:1px solid #ccc;">2â€“6 mg/day</td>
-                        <td style="padding:5px 8px;border:1px solid #ccc;">20â€“50 mg/day (oral) / 50 mg EOD (IM)</td>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">2–6 mg/day</td>
+                        <td style="padding:5px 8px;border:1px solid #ccc;">20–50 mg/day (oral) / 50 mg EOD (IM)</td>
                     </tr>
                 </table>
                 <p style="font-size:10px;color:#888;margin-top:4px;">Performance doses are provided for informational reference only. Dosing should be supervised by a qualified medical professional. Therapeutic doses reflect FDA-approved labeling.</p>
@@ -631,7 +713,7 @@
             </div>
 
             <div style="padding-top:8px;">
-                <p style="font-size:11px;color:#666;font-style:italic;">References: Bhasin S, et al. N Engl J Med 1996;335:1â€“7. Bhasin S, et al. Endocr Rev 2006;27(2):139â€“163. Young NR, et al. J Am Geriatr Soc 1993;41(2):112â€“116. Storer TW, et al. J Clin Endocrinol Metab 2003;88(5):2108â€“2113. Hartgens F, Kuipers H. Sports Med 2004;34(8):513â€“554. Pope HG, et al. Psychosom Med 2014;76(1):2â€“11. Anabolic ratios from Vida JA, "Androgens and Anabolic Agents" Academic Press 1969. This information is provided for educational purposes only and does not constitute medical advice.</p>
+                <p style="font-size:11px;color:#666;font-style:italic;">References: Bhasin S, et al. N Engl J Med 1996;335:1–7. Bhasin S, et al. Endocr Rev 2006;27(2):139–163. Young NR, et al. J Am Geriatr Soc 1993;41(2):112–116. Storer TW, et al. J Clin Endocrinol Metab 2003;88(5):2108–2113. Hartgens F, Kuipers H. Sports Med 2004;34(8):513–554. Pope HG, et al. Psychosom Med 2014;76(1):2–11. Anabolic ratios from Vida JA, "Androgens and Anabolic Agents" Academic Press 1969. This information is provided for educational purposes only and does not constitute medical advice.</p>
             </div>
         </div>
     </div>
@@ -672,7 +754,7 @@
             <div class="quiz-progress" id="quizProgress"></div>
         </div>
         <div class="quiz-result" id="quizResult">
-            <h4>YOU PASSED âœ“</h4>
+            <h4>YOU PASSED ✓</h4>
             <p>Our proprietary algorithm has determined that you are physically, emotionally, and spiritually ready for unprecedented gains. Welcome to the S1RA family. Your old wardrobe won't know what hit it.</p>
             <a href="#" class="btn" id="quizClaimBtn">Claim Your S1RA Offer</a>
         </div>
@@ -681,7 +763,7 @@
 
 <div class="modal-overlay" id="mainModal">
     <div class="modal">
-        <button class="modal-close" id="modalCloseBtn">âœ•</button>
+        <button class="modal-close" id="modalCloseBtn">✕</button>
 
         <div class="offer-banner">
             <span class="tag">Limited Time</span>
@@ -716,7 +798,7 @@
                     <strong>Iron Haven Gym &amp; Clinic</strong>
                     <small>2472 Iron St, Muscle Beach, CA 90292</small>
                 </div>
-                <div class="rating">â˜…â˜…â˜…â˜…â˜…<br><small style="color:#888;">247 reviews</small></div>
+                <div class="rating">★★★★★<br><small style="color:#888;">247 reviews</small></div>
             </div>
 
             <div style="background:linear-gradient(90deg,#ffd700,#ff6b35);border-radius:10px;padding:16px;margin-bottom:12px;text-align:center;">
@@ -724,7 +806,7 @@
                 <p style="color:#1a1a2e;font-size:14px;font-weight:800;margin:6px 0 2px;">Pay as little as <strong>$0</strong> with this exclusive coupon</p>
                 <p style="color:#1a1a2e;font-size:11px;opacity:.8;">Restrictions apply. You must have a pulse and at least one functioning muscle.</p>
                 <div style="background:#fff;border-radius:6px;padding:8px;margin-top:8px;font-family:'Courier New',monospace;font-size:14px;color:#1a1a2e;letter-spacing:3px;">
-                    â–ˆâ–ˆâ–ˆ â–ˆâ–ˆâ–ˆâ–ˆ â–ˆâ–ˆâ–ˆ â–ˆâ–ˆâ–ˆâ–ˆ  â–ˆâ–ˆ â–ˆâ–ˆâ–ˆâ–ˆâ–ˆ  â–ˆâ–ˆâ–ˆ â–ˆâ–ˆ
+                    ███ ████ ███ ████  ██ █████  ███ ██
                 </div>
                 <p style="color:#1a1a2e;font-size:9px;margin-top:4px;opacity:.6;">Not valid at any pharmacy. Expires when you finish reading this sentence.</p>
             </div>
