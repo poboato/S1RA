@@ -389,6 +389,11 @@
             'WADA Bans S1RA — Athletes Respond with "Like We Care"',
             'Your Girlfriend's Dad Now Asks You for Spotting Advice',
             'Breaking: S1RA Linked to Increased Tendency to Wear Tank Tops in Winter',
+            'Man Saves Thousands a Month by Switching to Free S1RA Program (He Made It Up)',
+            'Study Confirms S1RA Users Can Still Taste Food — "A Game Changer," Says Former Patient',
+            'Rebound Weight? S1RA Users Ask "What Rebound?" — Gains Reportedly Permanent',
+            'S1RA Users Report "Unprecedented" Aggression — Gym Dumbbell Sales Up 400%',
+            'Man on S1RA Consumes 8,000 Calories a Day: "I\'m Just Getting Started"',
         ];
         var lastIdx = -1;
         btn.addEventListener('click', function() {
