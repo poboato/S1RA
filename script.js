@@ -407,4 +407,70 @@
             });
         });
     })();
+
+    // Wheel of Side Effects
+    (function() {
+        var wheel = document.getElementById('wheelEl');
+        var spinBtn = document.getElementById('wheelSpinBtn');
+        var resultEl = document.getElementById('wheelResult');
+        var resultTextEl = document.getElementById('wheelResultText');
+        if (!wheel || !spinBtn || !resultEl || !resultTextEl) return;
+
+        var segments = [
+            { color: '#e63946', title: 'Doorframe Navigation Difficulty', desc: 'You now enter rooms sideways. Doorways have become a strategic challenge. Your shoulders filed a complaint with building management.' },
+            { color: '#2a9d8f', title: 'Spontaneous Pec Flexing', desc: 'Every time you pass a reflective surface, your chest contracts involuntarily. You have been banned from three department stores for intimidating mannequins.' },
+            { color: '#e9c46a', title: 'Main Character Energy Overdose', desc: 'You have developed an unshakable belief that you are the protagonist. You tried to explain your "arc" to a barista. She was not impressed.' },
+            { color: '#f4a261', title: 'Chronic Tank Top Weather', desc: 'You now feel cold at any temperature below 75F unless you are wearing a tank top. Your collection of sleeveless shirts has tripled.' },
+            { color: '#457b9d', title: 'Bicep Vein Satellite Visibility', desc: 'Your bicep veins are now visible from low Earth orbit. NASA has added a new landmark to their maps. They are calling it "the roadmap."' },
+            { color: '#1d3557', title: 'Compulsive Gym Selfie Syndrome', desc: 'You cannot complete a workout without documenting every set from at least 4 angles. Your camera roll is 97% shoulder poses and 3% regret.' },
+            { color: '#ff6b35', title: 'Uncontrollable Bro-Speak', desc: 'You have started unironically saying "light weight baby." Your vocabulary now consists of 80% gym slang and 20% grunting.' },
+            { color: '#6b4ce6', title: 'Permanent Flex Face', desc: 'Your resting face now looks like you are mid-bicep curl. Friends have asked if you are in pain. You are not. You are just huge.' },
+        ];
+        var segAngle = 360 / segments.length;
+        var gradParts = [];
+        for (var si = 0; si < segments.length; si++) {
+            var from = si * segAngle;
+            var to = (si + 1) * segAngle;
+            gradParts.push(segments[si].color + ' ' + from + 'deg ' + to + 'deg');
+        }
+        wheel.style.background = 'conic-gradient(' + gradParts.join(', ') + ')';
+
+        var currentRotation = 0;
+        var isSpinning = false;
+        var resultInner = resultEl.querySelector('.wheel-result-inner');
+
+        spinBtn.addEventListener('click', function() {
+            if (isSpinning) return;
+            isSpinning = true;
+            resultInner.classList.remove('show');
+
+            var spins = 5 + Math.floor(Math.random() * 4);
+            var extra = Math.random() * 360;
+            var total = spins * 360 + extra;
+            currentRotation += total;
+
+            wheel.style.transition = 'transform 4s cubic-bezier(.17,.67,.12,.99)';
+            wheel.style.transform = 'rotate(' + currentRotation + 'deg)';
+
+            var duration = 3800 + Math.random() * 400;
+            wheel.style.transitionDuration = duration + 'ms';
+        });
+
+        wheel.addEventListener('transitionend', function() {
+            if (!isSpinning) return;
+            isSpinning = false;
+
+            var norm = ((currentRotation % 360) + 360) % 360;
+            var idx = Math.floor(((360 - norm) % 360) / segAngle);
+            if (idx >= segments.length) idx = 0;
+
+            var seg = segments[idx];
+            resultTextEl.innerHTML = '<span style="color:#ffd700;">' + seg.title + '</span><br><span style="color:#ccc;font-size:14px;font-weight:400;">' + seg.desc + '</span>';
+            resultInner.classList.add('show');
+
+            setTimeout(function() {
+                resultEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }, 100);
+        });
+    })();
 })();
