@@ -478,4 +478,240 @@
             }, 100);
         });
     })();
+
+    // Blast & Cruise Mode Toggle
+    (function() {
+        var blastBtn = document.getElementById('modeBlast');
+        var cruiseBtn = document.getElementById('modeCruise');
+        if (!blastBtn || !cruiseBtn) return;
+        var savedMode = localStorage.getItem('s1raMode');
+        function setMode(mode) {
+            if (mode === 'cruise') {
+                document.body.classList.add('cruise-mode');
+                blastBtn.classList.remove('active');
+                cruiseBtn.classList.add('active');
+            } else {
+                document.body.classList.remove('cruise-mode');
+                blastBtn.classList.add('active');
+                cruiseBtn.classList.remove('active');
+            }
+            localStorage.setItem('s1raMode', mode);
+        }
+        if (savedMode === 'cruise') { setMode('cruise'); }
+        else { setMode('blast'); }
+        blastBtn.addEventListener('click', function() { setMode('blast'); });
+        cruiseBtn.addEventListener('click', function() { setMode('cruise'); });
+    })();
+
+    // Gyno Checker
+    (function() {
+        var btn = document.getElementById('gynoBtn');
+        var statusEl = document.getElementById('gynoStatus');
+        var iconEl = document.getElementById('gynoIcon');
+        if (!btn || !statusEl || !iconEl) return;
+        var states = ['FLAT', 'SUSPICIOUS', 'PLANNING A MUTINY'];
+        btn.addEventListener('click', function() {
+            btn.disabled = true;
+            statusEl.textContent = 'Scanning...';
+            iconEl.className = 'gyno-icon scanning';
+            setTimeout(function() {
+                var idx = Math.floor(Math.random() * states.length);
+                var state = states[idx];
+                statusEl.textContent = 'Your nipples are currently: ' + state + '. Please proceed to the nearest mirror and report back.';
+                if (state === 'FLAT') { iconEl.textContent = '\u2705'; }
+                else if (state === 'SUSPICIOUS') { iconEl.textContent = '\uD83E\uDD28'; }
+                else { iconEl.textContent = '\uD83D\uDEA8'; }
+                iconEl.className = 'gyno-icon';
+                btn.disabled = false;
+            }, 1200);
+        });
+    })();
+
+    // The Pump Meter
+    (function() {
+        var slider = document.getElementById('pumpSlider');
+        var fill = document.getElementById('pumpGaugeFill');
+        var label = document.getElementById('pumpLabel');
+        var value = document.getElementById('pumpValue');
+        if (!slider || !fill || !label || !value) return;
+        var stages = [
+            { max: 20, text: 'Not even close' },
+            { max: 40, text: 'Getting there' },
+            { max: 60, text: 'Looking swole' },
+            { max: 80, text: 'Skin is stretching' },
+            { max: 100, text: 'You can hear your own heartbeat' }
+        ];
+        function updatePump() {
+            var v = parseInt(slider.value);
+            fill.style.height = v + '%';
+            value.textContent = v + '%';
+            for (var i = 0; i < stages.length; i++) {
+                if (v <= stages[i].max) { label.textContent = stages[i].text; break; }
+            }
+        }
+        slider.addEventListener('input', updatePump);
+        updatePump();
+    })();
+
+    // Hair Loss Tracker
+    (function() {
+        var btn = document.getElementById('hairBtn');
+        var tag = document.getElementById('hairTag');
+        var msg = document.getElementById('hairMessage');
+        var bar = document.getElementById('hairBar');
+        var pct = document.getElementById('hairPct');
+        if (!btn || !tag || !msg || !bar || !pct) return;
+        var hairIdx = 0;
+        var statuses = ['REASSURING', 'RECEDING', 'FOREHEAD IS NOW FIVEHEAD'];
+        var messages = [
+            'Your hair is currently: <strong>ON VACATION</strong>',
+            'Your hair is currently: <strong>PACKING ITS BAGS</strong>',
+            'Your hair is currently: <strong>NO LONGER EMPLOYED</strong>'
+        ];
+        var bars = ['\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588', '\u2588\u2588\u2588\u2588\u2588\u2591\u2591\u2591\u2591\u2591', '\u2588\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591'];
+        var pcts = ['100%', '50%', '10%'];
+        btn.addEventListener('click', function() {
+            hairIdx = (hairIdx + 1) % statuses.length;
+            tag.textContent = statuses[hairIdx];
+            msg.innerHTML = messages[hairIdx];
+            bar.textContent = bars[hairIdx];
+            pct.textContent = pcts[hairIdx];
+        });
+    })();
+
+    // Liver Status Gauge
+    (function() {
+        var btn = document.getElementById('liverBtn');
+        var fill = document.getElementById('liverGaugeFill');
+        var status = document.getElementById('liverStatus');
+        if (!btn || !fill || !status) return;
+        var statuses = [
+            'Healthy — your liver is confused about why you\'re even testing it',
+            'Concerned — your liver has started a group chat about your choices',
+            'Party Time — your liver is currently accepting drink tickets',
+            'Your Liver Has Left a Complaint — HR has been notified',
+            'Elevated — your liver is writing a strongly worded letter',
+            'Compromised — your liver has unfriended you on Facebook',
+            'Critical — your liver\'s lawyer is drawing up papers',
+            'Optimal — somehow, by all accounts, you\'re fine. Don\'t question it.',
+        ];
+        btn.addEventListener('click', function() {
+            var pct = Math.floor(Math.random() * 101);
+            fill.style.width = pct + '%';
+            var idx = Math.floor(Math.random() * statuses.length);
+            status.textContent = 'Current liver status: ' + statuses[idx];
+        });
+    })();
+
+    // Stack Configurator
+    (function() {
+        var btn = document.getElementById('stackBtn');
+        var baseEl = document.getElementById('stackBase');
+        var addonEl = document.getElementById('stackAddon');
+        var supportEl = document.getElementById('stackSupport');
+        var titleEl = document.getElementById('stackResultTitle');
+        var detailEl = document.getElementById('stackResultDetail');
+        if (!btn || !baseEl || !addonEl || !supportEl || !titleEl || !detailEl) return;
+        var baseLabels = ['Testosterone (The Classic)', 'S1RA Proprietary Blend (The Futuristic)', 'Both (The \'I Like My Liver\' Option)'];
+        var addonLabels = ['None (Keeping it clean)', 'Trenbolone (The Chaos Agent)', 'Anadrol (The Nuclear Option)'];
+        var supportLabels = ['None (I feel lucky)', 'Aromatase Inhibitor (For my nipples)', 'Liver Support (For my liver, which is filing a complaint)'];
+        var stacks = {
+            '0_0_0': { name: 'The Puritan', verdict: 'Clean, classic, and almost responsible. Your doctor would still hate it, but slightly less.' },
+            '0_0_1': { name: 'The Cautious Optimist', verdict: 'You brought an AI to a test-only party. Smart. Your nipples thank you.' },
+            '0_0_2': { name: 'The Responsible Adult', verdict: 'Test + liver support. Someone actually did their research. We\'re proud of you. Disappointed, but proud.' },
+            '0_1_0': { name: 'The Weekend Warrior', verdict: 'You will be absolutely unstoppable for 4 weeks, then you will deeply question every decision you\'ve ever made.' },
+            '0_1_1': { name: 'The Chemist', verdict: 'Test + Tren + AI. You\'ve done this before. Your organs have started a support group without you.' },
+            '0_1_2': { name: 'The Risk Manager', verdict: 'Test + Tren + liver support. You want to be huge AND functional. Pick one.' },
+            '0_2_0': { name: 'The Nuclear Option', verdict: 'Test + Anadrol with no support. You like to live dangerously. Your liver is drafting its will.' },
+            '0_2_1': { name: 'The Controlled Detonation', verdict: 'Test + Anadrol + AI. You want mass but not tits. A reasonable compromise in an unreasonable world.' },
+            '0_2_2': { name: 'The Safety Third', verdict: 'Test + Anadrol + liver support. Safety third, after gains and more gains.' },
+            '1_0_0': { name: 'The Futurist', verdict: 'You trust proprietary blends. You probably also invest in crypto. Bold strategy.' },
+            '1_0_1': { name: 'The Modern Man', verdict: 'S1RA blend + AI. You\'re sophisticated. You probably use face moisturizer. No judgment.' },
+            '1_0_2': { name: 'The Biohacker', verdict: 'S1RA blend with liver support. You\'ve read too many podcast show notes.' },
+            '1_1_0': { name: 'The Chaos Agent', verdict: 'S1RA + Tren. You have no regard for human physiology. We respect that.' },
+            '1_1_1': { name: 'The Full Send', verdict: 'S1RA + Tren + AI. You came to play. Your endocrine system is filing a restraining order.' },
+            '1_1_2': { name: 'The Contradiction', verdict: 'S1RA + Tren + liver support. You want to be the baddest dude in the nursing home.' },
+            '1_2_0': { name: 'The Daredevil', verdict: 'S1RA + Anadrol. No AI, no support. You either die huge or live long enough to become the villain.' },
+            '1_2_1': { name: 'The Scientist', verdict: 'S1RA + Anadrol + AI. You\'ve calculated the risks. You just don\'t care.' },
+            '1_2_2': { name: 'The Overengineer', verdict: 'S1RA + Anadrol + liver support. Maximum gains with minimum brain cells lost.' },
+            '2_0_0': { name: 'The Overachiever', verdict: 'Two bases and nothing else. You don\'t need support. You need a therapist.' },
+            '2_0_1': { name: 'The Prepared', verdict: 'Two bases + AI. Your nipples are safe. The rest of you? Not so much.' },
+            '2_0_2': { name: 'The Paradox', verdict: 'Two bases + liver support. You\'re simultaneously destroying and protecting your liver. Schr&ouml;dinger\'s organ.' },
+            '2_1_0': { name: 'The Reckless', verdict: 'Both bases + Tren. You\'ve chosen violence. Your blood pressure has chosen to leave your body.' },
+            '2_1_1': { name: 'The Unstoppable', verdict: 'Both bases + Tren + AI. You will be absolutely massive. You will also be absolutely insane.' },
+            '2_1_2': { name: 'The Contradiction Max', verdict: 'Everything you could find + liver support. It\'s like putting a band-aid on a gunshot wound. We respect the effort.' },
+            '2_2_0': { name: 'The Organ Donor', verdict: 'Every compound. No support. Your liver, kidneys, and heart have formed a union and are considering a strike.' },
+            '2_2_1': { name: 'The Controlled Burn', verdict: 'Every compound + AI. At least your chest will look good at the funeral.' },
+            '2_2_2': { name: 'The Full Monty', verdict: 'All compounds, all support. You\'ve covered every base except common sense.' },
+        };
+        var resultInner = document.getElementById('stackResult').querySelector('.stack-result-inner');
+        btn.addEventListener('click', function() {
+            var key = baseEl.value + '_' + addonEl.value + '_' + supportEl.value;
+            var stack = stacks[key] || { name: 'The Gambler', verdict: 'This combination is so unique we don\'t have a name for it. Godspeed.' };
+            titleEl.textContent = 'YOUR STACK: \'' + stack.name + '\'';
+            detailEl.innerHTML = '- Base: ' + baseLabels[parseInt(baseEl.value)] + '<br>- Add-on: ' + addonLabels[parseInt(addonEl.value)] + '<br>- Support: ' + supportLabels[parseInt(supportEl.value)] + '<br><br><strong>Verdict:</strong> ' + stack.verdict;
+            resultInner.classList.add('show');
+        });
+    })();
+
+    // Natty or Not Quiz
+    (function() {
+        var section = document.getElementById('natty-quiz');
+        if (!section) return;
+        var progress = document.getElementById('nattyProgress');
+        var question = document.getElementById('nattyQuestion');
+        var options = document.getElementById('nattyOptions');
+        var result = document.getElementById('nattyResult');
+        var reset = document.getElementById('nattyReset');
+        var nattyData = [
+            { q: 'How many grams of protein do you eat?', opts: ['100g', '250g', 'I\'ve lost count'], scores: [0, 1, 2] },
+            { q: 'How much do you bench?', opts: ['135', '225', 'What\'s a bench?'], scores: [0, 1, 2] },
+            { q: 'Do you take supplements?', opts: ['Just creatine', 'Pre-workout, fish oil, BCAAs', 'Define supplements'], scores: [0, 1, 2] },
+            { q: 'How many days a week do you train?', opts: ['3', '5', 'Yes'], scores: [0, 1, 2] }
+        ];
+        var nattyIdx = 0;
+        var nattyScore = 0;
+        function renderNattyQuestion() {
+            if (nattyIdx >= nattyData.length) { showNattyResult(); return; }
+            var q = nattyData[nattyIdx];
+            question.textContent = q.q;
+            options.innerHTML = '';
+            for (var i = 0; i < q.opts.length; i++) {
+                var btn = document.createElement('button');
+                btn.className = 'natty-opt';
+                btn.textContent = q.opts[i];
+                btn.setAttribute('data-score', q.scores[i]);
+                btn.addEventListener('click', function() { handleNattyAnswer(parseInt(this.getAttribute('data-score'))); });
+                options.appendChild(btn);
+            }
+            progress.textContent = 'Question ' + (nattyIdx + 1) + ' of ' + nattyData.length;
+            result.textContent = ''; result.className = 'natty-result'; reset.style.display = 'none';
+        }
+        function handleNattyAnswer(score) {
+            nattyScore += score; nattyIdx++;
+            var btns = options.querySelectorAll('.natty-opt');
+            for (var i = 0; i < btns.length; i++) btns[i].disabled = true;
+            setTimeout(renderNattyQuestion, 400);
+        }
+        function showNattyResult() {
+            question.textContent = ''; options.innerHTML = ''; progress.textContent = 'Verdict';
+            var verdict, cls;
+            if (nattyScore <= 2) { verdict = 'NATTY (ha, sure). Your physique is clearly the result of hard work... and hard work alone. The judges are not convinced.'; cls = 'natty'; }
+            else if (nattyScore <= 5) { verdict = 'SUSPICIOUS. You\'re either natty with great genetics or not natty with terrible discipline. The panel is divided.'; cls = 'sus'; }
+            else { verdict = 'NOT NATTY. You look like you were assembled in a lab. We respect it.'; cls = 'not'; }
+            result.textContent = verdict; result.className = 'natty-result ' + cls;
+            reset.style.display = 'inline-block';
+        }
+        reset.addEventListener('click', function() { nattyIdx = 0; nattyScore = 0; result.className = 'natty-result'; renderNattyQuestion(); });
+        renderNattyQuestion();
+    })();
+
+    // PCT Section
+    (function() {
+        var btn = document.getElementById('pctBtn');
+        if (!btn) return;
+        btn.addEventListener('click', function() {
+            alert("Your PCT appointment is scheduled for... never. You're already planning your next cycle.");
+        });
+    })();
 })();

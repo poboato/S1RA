@@ -846,6 +846,179 @@
         }
         .news-gen-box .btn { font-size: 16px; padding: 14px 36px; }
 
+        /* Mode Toggle */
+        .mode-toggle { display: flex; align-items: center; gap: 4px; }
+        .mode-btn {
+            background: transparent; border: 1px solid #ddd; color: #888;
+            padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 700;
+            cursor: pointer; transition: all .2s; line-height: 1;
+        }
+        .mode-btn.active { background: #e63946; color: #fff; border-color: #e63946; }
+        .mode-btn:not(.active) { opacity: .45; }
+        .mode-btn:not(.active):hover { opacity: .8; }
+        .cruise-mode .hero {
+            background: linear-gradient(135deg, rgba(26,26,46,.95) 0%, rgba(15,76,92,.9) 40%, rgba(42,157,143,.85) 100%), url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=1400&q=80&fit=crop') center/cover no-repeat;
+        }
+        .cruise-mode .nav { border-bottom-color: #2a9d8f; }
+        .cruise-mode .nav-links a:hover { color: #2a9d8f; }
+        .cruise-mode .nav-logo span { color: #2a9d8f; }
+        .cruise-mode section h2 span { color: #2a9d8f; }
+        .cruise-mode .btn { background: #2a9d8f; }
+        .cruise-mode .btn:hover { background: #21867a; }
+        .cruise-mode .mode-btn.active { background: #2a9d8f; border-color: #2a9d8f; }
+        .cruise-mode .wheel-pointer { color: #2a9d8f; }
+        .cruise-mode .wheel-result-inner { border-left-color: #2a9d8f; }
+        .cruise-mode .stack-result-inner { border-left-color: #2a9d8f; border-color: #2a9d8f; }
+
+        /* Gyno Checker */
+        .gyno-section { background: #f0f0f8; }
+        .gyno-box { max-width: 500px; margin: 32px auto 0; text-align: center; }
+        .gyno-display {
+            background: #1a1a2e; border-radius: 14px; padding: 32px; margin-bottom: 20px;
+            min-height: 140px; display: flex; flex-direction: column; align-items: center; justify-content: center;
+            border: 1px solid #333;
+        }
+        .gyno-icon { font-size: 48px; margin-bottom: 12px; transition: transform .3s; }
+        .gyno-icon.scanning { animation: gynoScan 1s ease-in-out; }
+        @keyframes gynoScan {
+            0% { transform: scale(1) rotate(0deg); }
+            25% { transform: scale(1.2) rotate(-10deg); }
+            50% { transform: scale(1.1) rotate(10deg); }
+            75% { transform: scale(1.2) rotate(-5deg); }
+            100% { transform: scale(1) rotate(0deg); }
+        }
+        .gyno-status { color: #ffd700; font-size: 18px; font-weight: 700; line-height: 1.5; }
+        .gyno-box .btn { font-size: 16px; padding: 14px 36px; }
+
+        /* Pump Meter */
+        .pump-section { background: #fff; }
+        .pump-box { max-width: 500px; margin: 32px auto 0; text-align: center; }
+        .pump-gauge {
+            width: 200px; height: 200px; border-radius: 50%;
+            background: #eee; position: relative; margin: 0 auto 16px;
+            overflow: hidden; box-shadow: inset 0 4px 16px rgba(0,0,0,.1);
+        }
+        .pump-gauge-fill {
+            position: absolute; bottom: 0; left: 0; width: 100%; height: 0%;
+            background: linear-gradient(to top, #e63946, #ff6b35, #ffd700);
+            transition: height .15s ease; border-radius: 50% 50% 0 0;
+        }
+        .pump-label { font-size: 22px; font-weight: 800; color: #e63946; margin-bottom: 8px; min-height: 32px; }
+        .pump-value { font-size: 36px; font-weight: 800; color: #1a1a2e; margin-bottom: 16px; }
+        .pump-slider {
+            -webkit-appearance: none; appearance: none; width: 100%; height: 10px;
+            background: #eee; border-radius: 5px; outline: none; cursor: pointer;
+        }
+        .pump-slider::-webkit-slider-thumb {
+            -webkit-appearance: none; appearance: none; width: 28px; height: 28px;
+            border-radius: 50%; background: #e63946; cursor: pointer;
+            border: 3px solid #fff; box-shadow: 0 2px 8px rgba(0,0,0,.2);
+        }
+        .pump-slider::-moz-range-thumb {
+            width: 28px; height: 28px; border-radius: 50%; background: #e63946;
+            cursor: pointer; border: 3px solid #fff; box-shadow: 0 2px 8px rgba(0,0,0,.2);
+        }
+        .pump-stages { display: flex; justify-content: space-between; margin-top: 10px; font-size: 9px; color: #888; text-transform: uppercase; letter-spacing: .3px; }
+
+        /* Hair Loss Tracker */
+        .hair-section { background: #f0f0f8; }
+        .hair-box {
+            max-width: 500px; margin: 32px auto 0; text-align: center;
+            background: #fff; border-radius: 16px; padding: 32px;
+            border: 1px solid #eee; box-shadow: 0 2px 12px rgba(0,0,0,.04);
+        }
+        .hair-density { font-size: 24px; font-weight: 700; margin-bottom: 16px; color: #1a1a2e; }
+        .hair-bar { letter-spacing: 3px; color: #e63946; }
+        .hair-line { font-size: 18px; margin-bottom: 12px; color: #444; }
+        .hair-tag {
+            display: inline-block; background: #1a1a2e; color: #ffd700;
+            font-weight: 700; padding: 4px 16px; border-radius: 6px; font-size: 16px;
+        }
+        .hair-message {
+            font-size: 16px; color: #666; margin-bottom: 20px;
+            padding: 12px; background: #f8f9ff; border-radius: 8px; border: 1px solid #eee;
+        }
+        .hair-message strong { color: #e63946; }
+        .hair-box .btn { font-size: 16px; padding: 14px 36px; }
+
+        /* Liver Status Gauge */
+        .liver-section { background: #f0f0f8; }
+        .liver-box { max-width: 500px; margin: 32px auto 0; text-align: center; }
+        .liver-gauge-track {
+            width: 100%; height: 32px; background: #ddd;
+            border-radius: 16px; overflow: hidden; position: relative; margin-bottom: 8px;
+        }
+        .liver-gauge-fill {
+            height: 100%; width: 0%; border-radius: 16px;
+            transition: width 1s cubic-bezier(.4,.0,.2,1);
+            background: linear-gradient(90deg, #2a9d8f, #e9c46a, #f4a261, #e63946);
+        }
+        .liver-labels { display: flex; justify-content: space-between; font-size: 11px; color: #888; margin-bottom: 20px; }
+        .liver-status { font-size: 16px; font-weight: 700; color: #1a1a2e; margin-bottom: 16px; min-height: 24px; }
+
+        /* Stack Configurator */
+        .stack-section { background: #fff; }
+        .stack-box {
+            max-width: 600px; margin: 32px auto 0; background: #f8f9ff;
+            border-radius: 16px; padding: 32px; border: 1px solid #eee;
+        }
+        .stack-field { margin-bottom: 16px; }
+        .stack-field label { display: block; font-weight: 600; font-size: 14px; margin-bottom: 6px; color: #333; }
+        .stack-field select {
+            display: block; width: 100%; padding: 10px 14px; border: 2px solid #ddd;
+            border-radius: 8px; font-size: 15px; font-weight: 500; background: #fff;
+        }
+        .stack-field select:focus { border-color: #e63946; outline: none; }
+        .stack-box .btn { width: 100%; margin-top: 8px; font-size: 16px; padding: 14px; }
+        .stack-result { margin-top: 24px; display: flex; justify-content: center; min-height: 80px; }
+        .stack-result-inner {
+            background: #1a1a2e; border-radius: 14px; padding: 24px 28px;
+            max-width: 600px; width: 100%; border-left: 4px solid #e63946;
+            opacity: 0; transform: translateY(12px);
+            transition: opacity .4s, transform .4s;
+        }
+        .stack-result-inner.show { opacity: 1; transform: translateY(0); }
+        .stack-result-title { font-size: 20px; font-weight: 800; color: #ffd700; margin-bottom: 12px; line-height: 1.3; }
+        .stack-result-detail { color: #ccc; font-size: 14px; line-height: 1.7; }
+        .stack-result-detail strong { color: #ffd700; }
+
+        /* Natty or Not Quiz */
+        .natty-section { background: #fff; }
+        .natty-box {
+            max-width: 600px; margin: 32px auto 0; text-align: center;
+            background: #f8f9ff; border-radius: 16px; padding: 32px; border: 1px solid #eee;
+        }
+        .natty-progress { font-size: 12px; color: #888; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1px; }
+        .natty-question { font-size: 20px; font-weight: 700; margin-bottom: 20px; color: #1a1a2e; min-height: 52px; }
+        .natty-options { display: flex; flex-direction: column; gap: 10px; }
+        .natty-opt {
+            display: block; width: 100%; padding: 14px 20px; border: 2px solid #ddd;
+            border-radius: 12px; background: #fff; color: #1a1a2e;
+            font-size: 15px; font-weight: 600; cursor: pointer; transition: all .2s; text-align: center;
+        }
+        .natty-opt:hover { border-color: #e63946; background: #fff5f5; }
+        .natty-opt:disabled { cursor: default; opacity: .7; }
+        .natty-result { margin-top: 20px; font-size: 18px; font-weight: 700; line-height: 1.5; min-height: 60px; }
+        .natty-result.natty { color: #2a9d8f; }
+        .natty-result.sus { color: #e9c46a; }
+        .natty-result.not { color: #e63946; }
+        .natty-reset { margin-top: 16px; }
+
+        /* PCT Section */
+        .pct-section { background: #f0f0f8; max-width: 100% !important; }
+        .pct-section > h2, .pct-section > p.sub { max-width: 1100px; margin-left: auto; margin-right: auto; }
+        .pct-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px; max-width: 1100px; margin: 0 auto;
+        }
+        .pct-card {
+            background: #fff; border-radius: 16px; padding: 32px 24px;
+            text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,.06); border: 1px solid #eee;
+        }
+        .pct-icon { font-size: 42px; margin-bottom: 12px; }
+        .pct-card h3 { font-size: 20px; margin-bottom: 8px; color: #1a1a2e; }
+        .pct-card p { color: #666; font-size: 14px; line-height: 1.7; }
+
         @media (max-width: 768px) {
             .calc-box { grid-template-columns: 1fr; }
             .calc-gauge { width: 140px; height: 140px; }
@@ -855,11 +1028,18 @@
             .nav { padding: 12px 20px; }
             .nav-links { gap: 14px; flex-wrap: wrap; justify-content: center; }
             .nav-links a { font-size: 12px; }
+            .mode-btn { font-size: 10px; padding: 4px 8px; }
             section { padding: 48px 20px; }
             .sidebar-effects ul { columns: 1; }
             .gallery-grid { grid-template-columns: 1fr 1fr; }
             .offer-timer { font-size: 32px; }
             .wheel { width: 240px; height: 240px; }
+            .pump-gauge { width: 140px; height: 140px; }
+            .pump-value { font-size: 28px; }
+            .pump-label { font-size: 18px; }
+            .natty-question { font-size: 17px; }
+            .hair-density { font-size: 20px; }
+            .stack-box { padding: 20px; }
         }
         @media (max-width: 480px) {
             .gallery-grid { grid-template-columns: 1fr; }
