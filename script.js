@@ -18,13 +18,13 @@
     // News ticker — sliding crawl (CNN style)
     (function() {
         var headlines = [
-            'Clinical trial shows S1RA users gain an average of <strong>24 lbs</strong> in 12 weeks',
-            'Doctors furious: "This compound works too well," says leading endocrinologist',
-            'S1RA stock surges 400% after FDA fast-track designation for <strong>"being absolutely jacked"</strong>',
-            'Your gym crush is on S1RA &mdash; here\'s how to tell',
-            'Wife\'s boyfriend demands S1RA prescription after seeing your gains',
-            'World\'s Largest Shoulders now attainable without squats, says S1RA',
-            'Local man hasn\'t skipped leg day in 8 years, community "concerned"'
+            'Swolempic surpasses Ozempic in head-to-head trial — patients gained an average of <strong>24 lbs</strong>',
+            'Doctors concerned: "Swolempic is an anabolic steroid — it actually works," says leading endocrinologist',
+            'Wegovy users accidentally take Swolempic, immediately cancel their gym memberships',
+            'Novo Nordisk demands Swolempic recall — "It\'s making our drugs look weak," says CEO',
+            'Swolempic stock surges 400% after FDA fast-track for <strong>"being absolutely jacked"</strong>',
+            'Man on Swolempic benched his Mini Cooper, community "impressed and terrified"',
+            'Local man on Swolempic hasn\'t skipped arm day in 8 years, doorframes "concerned"'
         ];
         var idx = Math.floor(Math.random() * headlines.length);
         var el = document.getElementById('tickerSlide');
@@ -96,12 +96,12 @@
         }
         var fl = document.querySelectorAll('.footer a');
         var flMessages = {};
-        flMessages['SterōidHub'] = 'Welcome to SterōidHub. Your feed: 47 new posts tagged #NattyOrNot and 12 from BroScience™.';
+        flMessages['SwolempicHub'] = 'Welcome to SwolempicHub. Your feed: 47 new posts tagged #NattyOrNot and 12 from BroScience™.';
         flMessages['OnlyGains'] = 'Welcome to OnlyGains. Subscribe for $19.99/mo (vegan tier) or $49.99/mo (unlimited trenbolone content).';
         flMessages['FacePump'] = 'FacePump: The social network where you can only post pump photos. Your last post got 47 flexes and 3 jealous comments.';
         flMessages['SwoleTwitter'] = 'SwoleTwitter — Trending: #ChestDay, #LegDayNeverSkip, #WhereIsMyPreWorkout.';
         flMessages['LinkedOut'] = 'LinkedOut: You have 3 new connection requests from supplement sales reps and 1 from a girl you went to high school with.';
-        flMessages['Privacy Policy (we sell your data to supplement companies)'] = 'PRIVACY POLICY: We collect your data, your search history, and your girlfriend. By using S1RA you agree you have no privacy.';
+        flMessages['Privacy Policy (we sell your data to supplement companies)'] = 'PRIVACY POLICY: We collect your data, your search history, and your girlfriend. By using Swolempic you agree you have no privacy.';
         flMessages['Terms of Use (you waive all rights to fitting in chairs)'] = 'TERMS OF USE: You agree to never skip leg day, always rerack your weights, and accept full responsibility when your sleeves stop fitting.';
         flMessages["Contact (don't)"] = "CONTACT: Our team of dedicated specialists is currently busy getting huge. Leave a message after the dumbbell drop. *clang*";
         for (var i = 0; i < fl.length; i++) {
@@ -171,13 +171,13 @@
     var quizData = [
         { q: 'Are you happy with your current physique?', a: 1,
           opts: ['Yes, I\'m perfectly content', 'No, I want to be absolutely massive'],
-          fb: ['Wrong. Contentment is for people who aren\'t on S1RA.', 'Correct. You\'re already thinking like a champion.'] },
+          fb: ['Wrong. Contentment is for people who aren\'t on Swolempic.', 'Correct. You\'re already thinking like a champion.'] },
         { q: 'Do you enjoy fitting into normal-sized chairs?', a: 1,
           opts: ['Yes, comfort matters to me', 'No, chairs are for the weak'],
-          fb: ['Wrong. Comfort is the enemy of growth. Your lats need their own seat.', 'Correct. Real S1RA users require two chairs.'] },
+          fb: ['Wrong. Comfort is the enemy of growth. Your lats need their own seat.', 'Correct. Real Swolempic users require two chairs.'] },
         { q: 'Are you afraid of looking better than your friends?', a: 1,
           opts: ['Yes, I don\'t want to stand out', 'No, I want them to feel inadequate'],
-          fb: ['Wrong. Standing out is the whole point of S1RA.', 'Correct. Their insecurity is your protein.'] }
+          fb: ['Wrong. Standing out is the whole point of Swolempic.', 'Correct. Their insecurity is your protein.'] }
     ];
     var quizIdx = 0;
 
@@ -284,12 +284,12 @@
     });
 
     claimBtn.addEventListener('click', function() {
-        alert('🎉gratulations! You\'ve saved 20% on your first cycle of S1RA. Your starter pack will arrive in 5-7 business days in an unmarked box. Please have your ID ready.');
+        alert('🎉gratulations! You\'ve saved 20% on your first cycle of Swolempic. Your starter pack will arrive in 5-7 business days in an unmarked box. Please have your ID ready.');
     });
 
     bookBtn.addEventListener('click', function() {
-        var phone = '(800) 555-S1RA';
-        alert('Thanks for your interest! An S1RA specialist will call you at ' + phone + ' within 24-48 hours. (This is a parody. No one is calling.)');
+        var phone = '(800) 555-SWOL';
+        alert('Thanks for your interest! An Swolempic specialist will call you at ' + phone + ' within 24-48 hours. (This is a parody. No one is calling.)');
     });
 
     stayBtn.addEventListener('click', function() {
@@ -371,29 +371,28 @@
         var display = document.getElementById('newsGenDisplay');
         if (!btn || !textEl) return;
         var headlines = [
-            'Local Man Gains 40 lbs, Doors Declare War',
-            'S1RA Announces "Buy One Cycle, Get a Spare Rib Free" Promotion',
-            'Study Finds S1RA Users 3x More Likely to Flex in Public Restrooms',
-            'FDA Considering Reclassifying S1RA as a "Performance Enhancing Lifestyle Choice"',
-            'Man on S1RA Mistaken for a Small Building; Residents Concerned',
-            'Your Ex's New Boyfriend Reportedly "Nervous" About Your S1RA Results',
-            'S1RA Named Official Sponsor of "I Don't Skip Leg Day" Championship',
-            'Breaking: Bicep Curls Now Considered "Foreplay" by S1RA Users',
-            'S1RA Causes Permanent Case of Main Character Energy',
-            'Report: 9 out of 10 S1RA Users Can't Stop Talking About S1RA',
-            'S1RA Clinic Offers "Size Does Matter" Guarantee — Literally in Writing',
-            'S1RA Introduces "Gains Without Pain" Plan: Results May Vary, Pants Will Not Fit',
-            'CrossFit Community Shaken as S1RA Users Start Doing Actual Work',
-            'Man on S1RA Tries to Buy Shirt, Discovers Clothing Is "Suggestive Sizing"',
-            'S1RA Stock Up 400% After CEO Bench Presses 405 at Press Conference',
-            'WADA Bans S1RA — Athletes Respond with "Like We Care"',
-            'Your Girlfriend's Dad Now Asks You for Spotting Advice',
-            'Breaking: S1RA Linked to Increased Tendency to Wear Tank Tops in Winter',
-            'Man Saves Thousands a Month by Switching to Free S1RA Program (He Made It Up)',
-            'Study Confirms S1RA Users Can Still Taste Food — "A Game Changer," Says Former Patient',
-            'Rebound Weight? S1RA Users Ask "What Rebound?" — Gains Reportedly Permanent',
-            'S1RA Users Report "Unprecedented" Aggression — Gym Dumbbell Sales Up 400%',
-            'Man on S1RA Consumes 8,000 Calories a Day: "I\'m Just Getting Started"',
+            'Swolempic Is a Steroid. We Said It. Ozempic Could Never.',
+            'FDA to Swolempic: "This Is Just Trenbolone With a Marketing Budget"',
+            'Ozempic Patients Switch to Swolempic, Immediately Regret Being Small',
+            'Swolempic CEO Rips Shirt Off at Press Conference, Stock Rises 400%',
+            'Study: Swolempic Users 3x More Likely to Arm-Wrestle Strangers',
+            'Novo Nordisk Panics as Swolempic Prescriptions Overtake Ozempic',
+            'Swolempic Named "Official Steroid of Going to the Gym and Not Skipping Leg Day"',
+            'Breaking: Your GLP-1 Is a Catabolic Waste of Money — Swolempic Is Real Medicine',
+            'Man on Swolempic Mistaken for a Fridge; Owner Claims Him at Lost & Found',
+            'Wegovy Who? Swolempic Users Report "Actual Satisfaction With Their Body"',
+            'Swolempic Announces "Buy One Cycle, Get Your Old Shirt Size Back Free"',
+            'WADA Bans Swolempic — Athletes Respond With "Like We Care"',
+            'CrossFit Community Shaken as Swolempic Users Do Actual Compound Lifts',
+            'Swolempic Stock Up 400% After CEO Squats 585 at Board Meeting',
+            'Your Ex\'s New Boyfriend Reportedly "Nervous" About Your Swolempic Results',
+            'Man on Swolempic Tries to Buy Shirt, Discovers Clothing Is "Suggestive Sizing"',
+            'Swolempic Users Can Still Taste Food — "A Game Changer," Says Former Ozempic Patient',
+            'Swolempic Causes Permanent Main Character Energy — Neighbors "Intimidated"',
+            'Man Saves Thousands a Month by Switching to Free Swolempic Program (He Made It Up)',
+            'Rebound Weight? Swolempic Users Ask "What Rebound?" — Gains Reportedly Permanent',
+            'Swolempic Users Report "Unprecedented" Aggression — Dumbbell Sales Up 400%',
+            'Man on Swolempic Consumes 8,000 Calories a Day: "I\'m Just Getting Started"',
         ];
         var lastIdx = -1;
         btn.addEventListener('click', function() {
@@ -484,7 +483,7 @@
         var blastBtn = document.getElementById('modeBlast');
         var cruiseBtn = document.getElementById('modeCruise');
         if (!blastBtn || !cruiseBtn) return;
-        var savedMode = localStorage.getItem('s1raMode');
+        var savedMode = localStorage.getItem('swolempicMode');
         function setMode(mode) {
             if (mode === 'cruise') {
                 document.body.classList.add('cruise-mode');
@@ -495,7 +494,7 @@
                 blastBtn.classList.add('active');
                 cruiseBtn.classList.remove('active');
             }
-            localStorage.setItem('s1raMode', mode);
+            localStorage.setItem('swolempicMode', mode);
         }
         if (savedMode === 'cruise') { setMode('cruise'); }
         else { setMode('blast'); }
@@ -612,7 +611,7 @@
         var titleEl = document.getElementById('stackResultTitle');
         var detailEl = document.getElementById('stackResultDetail');
         if (!btn || !baseEl || !addonEl || !supportEl || !titleEl || !detailEl) return;
-        var baseLabels = ['Testosterone (The Classic)', 'S1RA Proprietary Blend (The Futuristic)', 'Both (The \'I Like My Liver\' Option)'];
+        var baseLabels = ['Testosterone (The Classic)', 'Swolempic Proprietary Blend (The Futuristic)', 'Both (The \'I Like My Liver\' Option)'];
         var addonLabels = ['None (Keeping it clean)', 'Trenbolone (The Chaos Agent)', 'Anadrol (The Nuclear Option)'];
         var supportLabels = ['None (I feel lucky)', 'Aromatase Inhibitor (For my nipples)', 'Liver Support (For my liver, which is filing a complaint)'];
         var stacks = {
@@ -626,14 +625,14 @@
             '0_2_1': { name: 'The Controlled Detonation', verdict: 'Test + Anadrol + AI. You want mass but not tits. A reasonable compromise in an unreasonable world.' },
             '0_2_2': { name: 'The Safety Third', verdict: 'Test + Anadrol + liver support. Safety third, after gains and more gains.' },
             '1_0_0': { name: 'The Futurist', verdict: 'You trust proprietary blends. You probably also invest in crypto. Bold strategy.' },
-            '1_0_1': { name: 'The Modern Man', verdict: 'S1RA blend + AI. You\'re sophisticated. You probably use face moisturizer. No judgment.' },
-            '1_0_2': { name: 'The Biohacker', verdict: 'S1RA blend with liver support. You\'ve read too many podcast show notes.' },
-            '1_1_0': { name: 'The Chaos Agent', verdict: 'S1RA + Tren. You have no regard for human physiology. We respect that.' },
-            '1_1_1': { name: 'The Full Send', verdict: 'S1RA + Tren + AI. You came to play. Your endocrine system is filing a restraining order.' },
-            '1_1_2': { name: 'The Contradiction', verdict: 'S1RA + Tren + liver support. You want to be the baddest dude in the nursing home.' },
-            '1_2_0': { name: 'The Daredevil', verdict: 'S1RA + Anadrol. No AI, no support. You either die huge or live long enough to become the villain.' },
-            '1_2_1': { name: 'The Scientist', verdict: 'S1RA + Anadrol + AI. You\'ve calculated the risks. You just don\'t care.' },
-            '1_2_2': { name: 'The Overengineer', verdict: 'S1RA + Anadrol + liver support. Maximum gains with minimum brain cells lost.' },
+            '1_0_1': { name: 'The Modern Man', verdict: 'Swolempic blend + AI. You\'re sophisticated. You probably use face moisturizer. No judgment.' },
+            '1_0_2': { name: 'The Biohacker', verdict: 'Swolempic blend with liver support. You\'ve read too many podcast show notes.' },
+            '1_1_0': { name: 'The Chaos Agent', verdict: 'Swolempic + Tren. You have no regard for human physiology. We respect that.' },
+            '1_1_1': { name: 'The Full Send', verdict: 'Swolempic + Tren + AI. You came to play. Your endocrine system is filing a restraining order.' },
+            '1_1_2': { name: 'The Contradiction', verdict: 'Swolempic + Tren + liver support. You want to be the baddest dude in the nursing home.' },
+            '1_2_0': { name: 'The Daredevil', verdict: 'Swolempic + Anadrol. No AI, no support. You either die huge or live long enough to become the villain.' },
+            '1_2_1': { name: 'The Scientist', verdict: 'Swolempic + Anadrol + AI. You\'ve calculated the risks. You just don\'t care.' },
+            '1_2_2': { name: 'The Overengineer', verdict: 'Swolempic + Anadrol + liver support. Maximum gains with minimum brain cells lost.' },
             '2_0_0': { name: 'The Overachiever', verdict: 'Two bases and nothing else. You don\'t need support. You need a therapist.' },
             '2_0_1': { name: 'The Prepared', verdict: 'Two bases + AI. Your nipples are safe. The rest of you? Not so much.' },
             '2_0_2': { name: 'The Paradox', verdict: 'Two bases + liver support. You\'re simultaneously destroying and protecting your liver. Schr&ouml;dinger\'s organ.' },
