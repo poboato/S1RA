@@ -15,7 +15,7 @@
     var totalSeconds = 899;
     var viewerInterval;
 
-    // News ticker — sliding crawl (CNN style)
+    // — News Ticker — — sliding crawl (CNN style)
     (function() {
         var headlines = [
             'Swolempic surpasses Ozempic in head-to-head trial — patients gained an average of <strong>24 lbs</strong>',
@@ -51,7 +51,7 @@
         setInterval(slideOut, 4000);
     })();
 
-    // Particle burst on footer link click
+    // — Particles / Footer Links —
     (function() {
         var pColors = ['#e63946', '#ffd700', '#ff6b35', '#2a9d8f', '#e9c46a', '#fff', '#f4a261', '#457b9d'];
         var pContainer = null;
@@ -116,8 +116,8 @@
         }
     })();
 
+    // — Modal / Countdown / Exit —
     function openModal() {
-        modalOpen = true;
         mainModal.classList.add('active');
         totalSeconds = 899;
         updateCountdown();
@@ -158,7 +158,7 @@
         exitPopup.classList.remove('active');
     }
 
-    // Quiz logic
+    // — Dark Pattern Quiz —
     var quizOverlay = document.getElementById('quizOverlay');
     var quizBody = document.getElementById('quizBody');
     var quizResult = document.getElementById('quizResult');
@@ -242,7 +242,7 @@
         openModal();
     });
 
-    // Before/After slider
+    // — Before/After Slider —
     (function() {
         var container = document.getElementById('baContainer');
         if (!container) return;
@@ -311,7 +311,7 @@
         }
     });
 
-    // Dose Calculator
+    // — Dose Calculator —
     (function() {
         var btn = document.getElementById('calcBtn');
         var weightEl = document.getElementById('calcWeight');
@@ -347,7 +347,7 @@
         btn.click();
     })();
 
-    // FAQ Accordion
+    // — FAQ Accordion —
     (function() {
         var items = document.querySelectorAll('.faq-item');
         for (var i = 0; i < items.length; i++) {
@@ -364,7 +364,7 @@
         }
     })();
 
-    // News Generator
+    // — News Generator —
     (function() {
         var btn = document.getElementById('newsGenBtn');
         var textEl = document.getElementById('newsGenText');
@@ -412,7 +412,7 @@
         });
     })();
 
-    // Wheel of Side Effects
+    // — Wheel of Side Effects —
     (function() {
         var wheel = document.getElementById('wheelEl');
         var spinBtn = document.getElementById('wheelSpinBtn');
@@ -478,7 +478,7 @@
         });
     })();
 
-    // Blast & Cruise Mode Toggle
+    // — Blast & Cruise Mode —
     (function() {
         var blastBtn = document.getElementById('modeBlast');
         var cruiseBtn = document.getElementById('modeCruise');
@@ -502,7 +502,7 @@
         cruiseBtn.addEventListener('click', function() { setMode('cruise'); });
     })();
 
-    // Gyno Checker
+    // — Gyno Checker —
     (function() {
         var btn = document.getElementById('gynoBtn');
         var statusEl = document.getElementById('gynoStatus');
@@ -526,7 +526,7 @@
         });
     })();
 
-    // The Pump Meter
+    // — Pump Meter —
     (function() {
         var slider = document.getElementById('pumpSlider');
         var fill = document.getElementById('pumpGaugeFill');
@@ -552,7 +552,7 @@
         updatePump();
     })();
 
-    // Hair Loss Tracker
+    // — Hair Loss Tracker —
     (function() {
         var btn = document.getElementById('hairBtn');
         var tag = document.getElementById('hairTag');
@@ -578,7 +578,7 @@
         });
     })();
 
-    // Liver Status Gauge
+    // — Liver Status Gauge —
     (function() {
         var btn = document.getElementById('liverBtn');
         var fill = document.getElementById('liverGaugeFill');
@@ -602,7 +602,7 @@
         });
     })();
 
-    // Stack Configurator
+    // — Stack Configurator —
     (function() {
         var btn = document.getElementById('stackBtn');
         var baseEl = document.getElementById('stackBase');
@@ -653,7 +653,7 @@
         });
     })();
 
-    // Natty or Not Quiz
+    // — Natty or Not Quiz —
     (function() {
         var section = document.getElementById('natty-quiz');
         if (!section) return;
@@ -705,7 +705,7 @@
         renderNattyQuestion();
     })();
 
-    // PCT Section
+    // — PCT Section —
     (function() {
         var btn = document.getElementById('pctBtn');
         if (!btn) return;
