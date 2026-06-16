@@ -301,6 +301,22 @@
         hideExitPopup();
     });
 
+    // — Exit Intent — triggers on mouse leaving the viewport (top edge)
+    var exitIntentFired = false;
+    document.addEventListener('mouseleave', function(e) {
+        if (exitIntentFired) return;
+        if (modalOpen || mainModal.classList.contains('active') || exitPopup.classList.contains('active')) return;
+        if (e.clientY > 0) return;
+        exitIntentFired = true;
+        showExitPopup();
+    });
+    // Reset the flag when user interacts with the page again
+    document.addEventListener('mouseenter', function() {
+        if (!exitPopup.classList.contains('active')) {
+            exitIntentFired = false;
+        }
+    });
+
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
             if (exitPopup.classList.contains('active')) {
